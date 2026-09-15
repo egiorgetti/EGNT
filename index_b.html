@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=' js';</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EGNT | Builds &amp; backs AI-native products — Edoardo Giorgetti</title>
+<meta name="description" content="EGNT builds and backs AI-native products. Current focus: Europe's ageing population, leveraging the AI ecosystem. Edoardo Giorgetti, 30+ years in digital: FinecoBank, ePRICE, Nexi YAP.">
+<meta name="theme-color" content="#0B0F19">
+<link rel="canonical" href="https://egnt.ai">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EGNT">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://egnt.ai">
+<meta property="og:title" content="EGNT | Builds &amp; backs AI-native products">
+<meta property="og:description" content="Currently working on Europe's ageing population, leveraging the AI ecosystem. Edoardo Giorgetti — FinecoBank, ePRICE, Nexi YAP.">
+<meta property="og:image" content="https://egnt.ai/og.png">
+<meta property="og:image:alt" content="EGNT — builds and backs AI-native products">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EGNT | Builds &amp; backs AI-native products">
+<meta name="twitter:description" content="Currently working on Europe's ageing population, leveraging the AI ecosystem.">
+<meta name="author" content="Edoardo Giorgetti">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="preload" href="fonts/PlusJakartaSans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+/* ---------- fonts (self-hosted) ---------- */
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/PlusJakartaSans-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/PlusJakartaSans-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+
+/* ---------- tokens ---------- */
+:root{
+--n100:#F5F5F6;--n200:#E7E7E4;--n300:#C7C7C2;--n400:#9C9CA3;--n500:#71717C;--n600:#4B4B57;--n700:#2E2F40;--n800:#171827;--n900:#0B0F19;
+--a100:#EEEFFD;--a200:#D6D8FB;--a300:#AEB2F6;--a400:#8286F2;--a500:#6366F1;--a600:#4C4FCE;--a700:#3A3CA0;--a800:#292B78;--a900:#1B1D52;
+--bg:var(--n900);--bg-raised:var(--n800);--bg-sunken:#07090F;
+--border:var(--n700);--border-subtle:#21222E;
+--text:var(--n200);--text-2:var(--n300);--text-muted:var(--n400);--text-on-accent:#fff;
+--accent:var(--a500);--accent-hover:var(--a400);
+--surface:var(--n800);--line:var(--n600);--fill-muted:var(--a900);
+--accent-surface:var(--a900);--accent-border:var(--a700);
+--mark-bg:var(--bg-sunken);--mark-text:var(--text);
+--font:'Plus Jakarta Sans','Google Sans Flex',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+--radius:4px;--shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 4px 16px rgba(0,0,0,.5);
+--pad-x:clamp(20px,5vw,56px);--wrap:860px;
+}
+[data-theme="light"]{
+--bg:#FAFAFB;--bg-raised:var(--n100);--bg-sunken:var(--n200);
+--border:var(--n300);--border-subtle:#DEDEDB;
+--text:var(--n900);--text-2:var(--n700);--text-muted:var(--n500);
+--accent:var(--a600);--accent-hover:var(--a500);
+--surface:var(--n100);--line:var(--n400);--fill-muted:var(--a200);
+--accent-surface:var(--a100);--accent-border:var(--a300);
+--mark-bg:var(--n900);--mark-text:var(--n100);
+--shadow-sm:0 1px 2px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.10);
+}
+[data-theme="mid"]{
+--bg:var(--n800);--bg-raised:var(--n700);--bg-sunken:var(--n900);
+--border:var(--n600);--border-subtle:#2E2F40;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;width:100%;max-width:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font);font-weight:700;margin:0}
+p,ul{margin:0}
+img,svg{max-width:100%}
+a{color:var(--accent);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--accent-hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+b{font-weight:700}
+
+/* ---------- layout ---------- */
+.band{background:var(--bg);color:var(--text);padding:clamp(40px,6vw,56px) var(--pad-x)}
+.band.raised{background:var(--bg-raised)}
+.wrap{max-width:var(--wrap);margin:0 auto}
+
+/* ---------- header + hero ---------- */
+.hdr{padding:60px var(--pad-x) 0}
+.hdr .wrap{display:flex;align-items:center}
+.hdr img{height:28px;width:auto;display:block}
+.hero{padding:36px var(--pad-x) clamp(44px,6vw,60px)}
+.hero h1{font-size:clamp(32px,4.8vw,50px);line-height:1.18;letter-spacing:-0.01em;max-width:800px;margin:0 0 30px}
+.hero h1 span{color:var(--accent)}
+.hero ul{list-style:none;padding:0;display:grid;gap:12px;max-width:760px;margin:0 0 26px}
+.hero li{display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.55;color:var(--n100)}
+.hero li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:10px;flex-shrink:0}
+.hero .lead{font-size:17px;line-height:1.5;color:var(--n100);max-width:760px}
+
+/* ---------- section furniture ---------- */
+.kicker{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.kicker .num{font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--accent)}
+.kicker .rule{width:24px;height:1px;background:var(--accent);flex-shrink:0}
+.kicker .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.h2{font-size:clamp(26px,3.2vw,36px);line-height:1.3;letter-spacing:-0.01em;max-width:860px;margin:0 0 24px}
+.takeaways{background:var(--bg-sunken);border:1px solid var(--border-subtle);border-radius:var(--radius);padding:clamp(20px,3vw,30px) clamp(18px,3vw,28px);margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 30px}
+.takeaways>div{border-left:3px solid var(--accent);padding-left:16px}
+.takeaways p{font-size:14px;line-height:1.6;color:var(--text-2)}
+.src{font-size:12px;line-height:1.5;color:var(--text-muted);margin-top:24px;max-width:860px}
+.caption{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+@media (max-width:860px){.takeaways{grid-template-columns:1fr}}
+
+/* ---------- 01 chart ---------- */
+.s1-fig{position:relative;max-width:780px;margin:0 auto;overflow:hidden;padding-bottom:4px}
+.s1-map{position:absolute;right:0;bottom:0;height:110%;width:auto;opacity:.07;pointer-events:none;user-select:none;z-index:0}
+.s1-fig>*:not(.s1-map){position:relative;z-index:1}
+.s1-fig .caption{margin-bottom:22px;display:block}
+.chart{--c1:86px;--c3:108px;display:grid;grid-template-columns:var(--c1) minmax(0,1fr) var(--c3);align-items:center;row-gap:11px}
+.chart-head{margin-bottom:14px;font-size:12px;color:var(--text-muted)}
+.chart-head .lg{display:flex;gap:28px;padding-left:34px;flex-wrap:wrap}
+.chart-head .lg span{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:var(--text)}
+.chart-head .lg i{width:20px;height:20px;display:inline-block}
+.chart-head .r,.chart .lab{text-align:right;padding-right:18px}
+.chart-head .r{padding-right:0}
+.chart-body{position:relative}
+.chart-body::before{content:"";position:absolute;left:var(--c1);top:0;bottom:0;width:3px;background:var(--text);z-index:2}
+.chart .lab{font-weight:700;font-size:17px}
+.bar{position:relative;height:30px}
+.bar .b2,.bar .b1{position:absolute;left:0;top:0;height:30px}
+.bar .b2{width:var(--w2);background:var(--a500)}
+.bar .b1{width:var(--w1);background:var(--a700);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-weight:600;font-size:16px;color:#fff;font-feature-settings:'tnum' 1;overflow:hidden}
+.bar .v2{position:absolute;left:var(--w2);top:0;height:30px;margin-left:10px;display:flex;align-items:center;white-space:nowrap;font-weight:600;font-size:16px;font-feature-settings:'tnum' 1}
+.chart .pill{display:flex;justify-content:flex-end}
+.chart .pill span{min-width:76px;height:32px;padding:0 12px;border-radius:999px;background:var(--mark-bg);color:var(--mark-text);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;font-feature-settings:'tnum' 1}
+@media (max-width:620px){
+  .chart{--c1:56px;--c3:76px}
+  .chart .lab{font-size:15px;padding-right:12px}
+  .bar .b1,.bar .v2{font-size:14px}
+  .bar .b1{padding-right:6px}
+  .chart .pill span{min-width:64px;height:28px;font-size:14px;padding:0 8px}
+  .chart-head .lg{padding-left:24px;gap:16px}
+}
+
+/* ---------- 01 KPIs ---------- */
+.kpis{margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.kpi{background:var(--bg);padding:18px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kpi .k{font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+.kpi .v{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.kpi svg{width:26px;height:26px;flex-shrink:0;stroke:var(--accent)}
+.kpi .n{display:flex;align-items:baseline;gap:8px}
+.kpi .n b{font-size:clamp(26px,3vw,30px);line-height:1;letter-spacing:-0.01em}
+.kpi .n b.acc{color:var(--accent)}
+.kpi .n .arr{font-size:17px;color:var(--text-muted)}
+.kpi .n small{font-size:15px;color:var(--text-muted)}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.kpis{grid-template-columns:1fr}}
+
+/* ---------- 02 pillars ---------- */
+.s2{--gap:clamp(14px,3vw,30px);max-width:700px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.pillar{display:flex;flex-direction:column;align-items:center;height:100%}
+.pillar .circle{position:relative;width:100%;aspect-ratio:1;border:1.5px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.pillar .circle img{width:64%;height:auto;display:block}
+.pillar .circle img.wide{width:84%}
+.pillar .bannerwrap{position:relative;width:100%;margin-top:-7%;z-index:2}
+.pillar .banner{background:#0B0F19;color:#E7E7E4;text-align:center;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(12px,1.9vw,20px);padding:clamp(8px,1.3vw,14px) 0;clip-path:polygon(clamp(10px,1.8vw,22px) 0,calc(100% - clamp(10px,1.8vw,22px)) 0,100% 50%,calc(100% - clamp(10px,1.8vw,22px)) 100%,clamp(10px,1.8vw,22px) 100%,0 50%)}
+.pillar .dash{position:absolute;top:50%;right:calc(-1 * var(--gap));width:var(--gap);height:1.5px;background:var(--text-muted)}
+.pillar .kpi2{width:100%;flex:1 1 auto;margin-top:clamp(12px,2vw,26px);background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(12px,1.8vw,20px) 10px;text-align:center}
+.pillar .kpi2.acc{background:var(--accent-surface);border-color:var(--accent-border)}
+.pillar .kpi2 .n{font-weight:700;font-size:clamp(17px,2.4vw,26px);line-height:1.1;letter-spacing:-0.01em}
+.pillar .kpi2.acc .n{color:var(--accent)}
+.pillar .kpi2 .d{font-size:clamp(13px,1.4vw,15px);line-height:1.45;color:var(--text-2);margin-top:8px}
+@media (max-width:560px){
+  .s2{grid-template-columns:1fr;gap:16px;max-width:420px}
+  .pillar{display:grid;grid-template-columns:92px minmax(0,1fr);column-gap:16px;row-gap:10px;align-items:center}
+  .pillar .circle{grid-row:1/3;width:92px}
+  .pillar .bannerwrap{margin-top:0;grid-column:2}
+  .pillar .banner{font-size:13px;padding:8px 0}
+  .pillar .dash{display:none}
+  .pillar .kpi2{margin-top:0;grid-column:2;text-align:left;padding:12px 14px}
+  .pillar .kpi2 .n{font-size:20px}
+  .pillar .kpi2 .d{font-size:14px}
+}
+
+/* ---------- 03 diagram ---------- */
+.s3-diag{position:relative;width:min(100%,600px);margin:0 auto;aspect-ratio:520/384;container-type:inline-size}
+.s3-diag>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.node{position:absolute;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:18cqw}
+.node svg{display:block;margin:0 auto 1cqw;width:4.4cqw;height:auto;stroke:var(--accent)}
+.node .t{font-size:2.55cqw;font-weight:600;line-height:1.25}
+.node.hub{width:22cqw}
+.node.hub svg{width:5.5cqw}
+.node.hub .t{font-size:3.2cqw;font-weight:700}
+.s3-diag-m{display:none}
+.s3-diag-m svg{width:100%;height:auto;display:block}
+.s3-diag-m .lbl text{font-family:var(--font);font-size:12.5px;font-weight:600;fill:var(--text)}
+.s3-diag-m .lbl .hub{font-size:15px;font-weight:700}
+@media (max-width:600px){
+  .s3-diag{display:none}
+  .s3-diag-m{display:block;max-width:400px;margin:0 auto}
+}
+
+/* ---------- 04 capex ---------- */
+.s4{display:flex;gap:clamp(16px,5vw,56px);align-items:center;justify-content:center;flex-wrap:nowrap}
+.capex{flex:0 0 auto;min-width:0}
+.capex .caption{text-align:center;display:block;margin-bottom:18px;font-size:clamp(10px,1.6vw,12px);letter-spacing:.04em}
+.bars{display:flex;align-items:flex-end;gap:clamp(10px,3vw,28px);justify-content:center}
+.bars>div{display:flex;flex-direction:column;align-items:center;gap:8px}
+.bars .v{font-weight:700;font-size:clamp(14px,2.4vw,20px);color:var(--text-2);font-feature-settings:'tnum' 1}
+.bars .v.acc{color:var(--accent)}
+.bars .col{height:clamp(120px,22vw,180px);display:flex;align-items:flex-end}
+.bars .col i{display:block;width:clamp(28px,6vw,56px);height:var(--h);background:var(--fill-muted);border-radius:var(--radius) var(--radius) 0 0}
+.bars .col i.acc{background:var(--accent)}
+.bars .y{font-size:clamp(10px,1.6vw,12px);color:var(--text-muted)}
+.capex .foot{font-size:clamp(9px,1.4vw,11px);color:var(--text-muted);text-align:center;margin-top:14px}
+.s4-cards{display:flex;flex-direction:column;gap:clamp(8px,2vw,16px);flex:0 1 300px;min-width:0}
+.s4-cards>div{border-radius:var(--radius);padding:clamp(10px,2.4vw,20px) clamp(10px,2.6vw,22px);box-shadow:var(--shadow-sm);background:var(--bg);border:1px solid var(--border)}
+.s4-cards>div.acc{background:var(--accent-surface);border-color:var(--accent-border)}
+.s4-cards .n{font-weight:700;font-size:clamp(18px,3.6vw,32px);letter-spacing:-0.01em;line-height:1.1}
+.s4-cards .acc .n{color:var(--accent)}
+.s4-cards .d{font-size:clamp(11.5px,1.7vw,13.5px);line-height:1.45;color:var(--text-2);margin-top:6px}
+@media (max-width:600px){.capex .foot{display:none}}
+
+/* ---------- 05 value stack ---------- */
+.stackwrap{background:var(--n900);border-radius:8px;padding:clamp(18px,3vw,28px) clamp(16px,3vw,28px) clamp(20px,3vw,30px);max-width:860px;margin:0 auto}
+.stack{display:grid;grid-template-columns:minmax(0,1fr) 30px;grid-template-rows:auto auto auto auto;column-gap:12px;row-gap:8px}
+.shead{grid-column:1;display:grid;grid-template-columns:36px minmax(0,.75fr) minmax(0,1.25fr);column-gap:16px;padding:0 clamp(12px,2vw,18px);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--n400)}
+.shead span:first-child{grid-column:1/3}
+.shead span:last-child{padding-left:17px}
+.layer{grid-column:1;display:grid;grid-template-columns:36px minmax(0,.75fr) minmax(0,1.25fr);column-gap:16px;align-items:center;border-radius:6px;padding:clamp(12px,1.6vw,16px) clamp(12px,2vw,18px);border:1px solid transparent}
+.layer>svg{width:28px;height:28px;flex-shrink:0}
+.layer.l1{background:var(--a500);color:#fff}
+.layer.l1>svg{stroke:#fff}
+.layer.l2{background:var(--a800);color:var(--n100);border-color:var(--a700)}
+.layer.l2>svg{stroke:var(--a300)}
+.layer.l3{background:var(--n800);color:var(--n300);border-color:var(--n700)}
+.layer.l3>svg{stroke:var(--n400)}
+.layer .ln{font-weight:700;font-size:clamp(16px,1.8vw,18px);line-height:1.2}
+.layer .ld{font-size:clamp(12.5px,1.2vw,13.5px);margin-top:2px;opacity:.85}
+.layer .lf{display:flex;flex-direction:column;gap:2px;border-left:1px solid rgba(255,255,255,.22);padding-left:16px}
+.layer .lf i{font-style:normal;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;opacity:.75;margin-bottom:1px}
+.layer .lf b{font-size:clamp(14px,1.5vw,16px);line-height:1.3;font-feature-settings:'tnum' 1}
+.layer .lf span{font-size:clamp(12px,1.2vw,13px);line-height:1.45;opacity:.8}
+.bracket{grid-column:2;grid-row:2/4;position:relative;border:1.5px solid var(--a300);border-left:none;border-radius:0 6px 6px 0;margin:6px 0;width:10px;justify-self:start}
+.bracket span{position:absolute;left:16px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;white-space:nowrap;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--a300)}
+@media (max-width:600px){
+  .stackwrap{padding:14px 12px 16px;border-radius:6px}
+  .stack{grid-template-columns:minmax(0,1fr) 24px;column-gap:8px}
+  .shead{display:none}
+  .layer{grid-template-columns:28px minmax(0,1fr);gap:6px 12px;padding:12px 14px}
+  .layer>svg{width:24px;height:24px;grid-row:1/3}
+  .layer .lf{grid-column:2;border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.22);padding-top:6px}
+  .bracket{grid-row:1/3}
+  .bracket span{left:13px;font-size:10px}
+}
+
+/* ---------- progress + about ---------- */
+.progress{border-top:1px solid var(--border-subtle)}
+.progress .wrap{display:flex;flex-direction:column;gap:14px}
+.progress h2{font-size:clamp(24px,3vw,34px);line-height:1.3;letter-spacing:-0.01em}
+.progress p{font-size:16px;line-height:1.65;color:var(--text-2);max-width:700px}
+.about-head{display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,4vw,40px);margin-bottom:clamp(18px,3vw,24px)}
+.about-id{display:flex;flex-direction:column;gap:6px;min-width:0}
+.about-id h2{font-size:clamp(20px,2.6vw,28px);letter-spacing:.08em;text-transform:uppercase;line-height:1.2;margin:0}
+.about-id .mail{font-size:16px;word-break:break-all}
+.about-head .photo{flex:0 0 clamp(80px,14vw,120px);display:block}
+.about-head .photo img{width:100%;display:block;border-radius:var(--radius)}
+.about .body{display:flex;flex-direction:column;gap:16px}
+.about .body p{font-size:16px;line-height:1.65;color:var(--text-2);max-width:700px}
+/* ================= BOOST LAYER ================= */
+/* 1. fluid background ------------------------------------------------ */
+html{background:var(--n900)}
+body{background:transparent}
+.hdr,.hero,.progress,#about{background:transparent}
+.progress{border-top:1px solid rgba(255,255,255,.09)}
+
+.fluid{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;
+  background:radial-gradient(130% 95% at 50% -10%,#14162E 0%,#0B0F19 48%,#07090F 100%)}
+.fluid span{position:absolute;display:block;border-radius:50%;filter:blur(90px);will-change:transform;mix-blend-mode:screen}
+.fluid .x1{width:56vw;height:56vw;left:-14vw;top:-12vw;opacity:.55;
+  background:radial-gradient(circle at 35% 35%,#4C4FCE,rgba(76,79,206,0) 70%);animation:flA 34s ease-in-out infinite}
+.fluid .x2{width:48vw;height:48vw;right:-12vw;top:4vh;opacity:.5;
+  background:radial-gradient(circle at 60% 40%,#6366F1,rgba(99,102,241,0) 70%);animation:flB 44s ease-in-out infinite}
+.fluid .x3{width:64vw;height:64vw;left:16vw;bottom:-26vw;opacity:.45;
+  background:radial-gradient(circle at 50% 50%,#292B78,rgba(41,43,120,0) 70%);animation:flC 52s ease-in-out infinite}
+.fluid .x4{width:34vw;height:34vw;right:12vw;bottom:6vh;opacity:.28;
+  background:radial-gradient(circle at 50% 50%,#8286F2,rgba(130,134,242,0) 70%);animation:flD 38s ease-in-out infinite}
+.fluid .mesh{position:absolute;inset:-25%;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 96px),
+             repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 96px);
+  -webkit-mask-image:radial-gradient(70% 55% at 50% 25%,#000,transparent 78%);
+          mask-image:radial-gradient(70% 55% at 50% 25%,#000,transparent 78%);
+  animation:meshDrift 48s linear infinite}
+@keyframes flA{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(13vw,7vh,0) scale(1.16)}66%{transform:translate3d(3vw,17vh,0) scale(.9)}}
+@keyframes flB{0%,100%{transform:translate3d(0,0,0) scale(1)}30%{transform:translate3d(-11vw,12vh,0) scale(.88)}65%{transform:translate3d(-4vw,-6vh,0) scale(1.2)}}
+@keyframes flC{0%,100%{transform:translate3d(0,0,0) scale(1)}40%{transform:translate3d(-14vw,-9vh,0) scale(1.12)}75%{transform:translate3d(9vw,-4vh,0) scale(.94)}}
+@keyframes flD{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-9vw,-14vh,0) scale(1.25)}}
+@keyframes meshDrift{to{transform:translate3d(96px,96px,0)}}
+
+/* faint drift inside the light bands too */
+.band{position:relative;overflow:hidden}
+.band>.wrap{position:relative;z-index:1}
+.band[data-theme="light"]::before{content:"";position:absolute;inset:-30%;z-index:0;pointer-events:none;opacity:.55;
+  background:radial-gradient(38% 42% at 22% 18%,rgba(99,102,241,.16),transparent 70%),
+             radial-gradient(32% 38% at 82% 78%,rgba(76,79,206,.13),transparent 70%);
+  animation:softDrift 40s ease-in-out infinite}
+@keyframes softDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4%,-3%,0) scale(1.1)}}
+
+/* scroll progress */
+.sprog{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:0 50%;z-index:99;
+  background:linear-gradient(90deg,var(--a300),var(--a500) 55%,var(--a400))}
+
+/* 2. typography tuning (Revolut-style geometric grotesque) ----------- */
+h1,h2,h3{font-weight:800}
+.hero h1{font-weight:800;letter-spacing:-0.03em}
+.h2,.progress h2{font-weight:800;letter-spacing:-0.025em}
+.about-id h2{font-weight:800;letter-spacing:.06em}
+.kpi .n b,.bars .v,.s4-cards .n,.pillar .kpi2 .n,.chart .lab,.chart .pill span{letter-spacing:-0.02em}
+.banner{letter-spacing:.08em}
+.kicker .lbl,.caption,.kpi .k{letter-spacing:.12em}
+
+/* 3. reveal engine --------------------------------------------------- */
+.js .rv{opacity:0;transform:translateY(20px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1) var(--d,0ms),transform .75s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .rv.froml{transform:translateX(-26px)}
+.js .rv.fromr{transform:translateX(26px)}
+.js .rv.in{opacity:1;transform:none}
+
+/* 01 — bars, axis, pills */
+.js .chart-body::before{transform:scaleY(0);transform-origin:top;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.js .chart-body.in::before{transform:scaleY(1)}
+.js .chart-body .bar .b1,.js .chart-body .bar .b2{width:0;transition:width 1.05s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .chart-body .bar .v2{left:0;opacity:0;transition:left 1.05s cubic-bezier(.22,1,.36,1) var(--d,0ms),opacity .5s ease var(--d,0ms)}
+.js .chart-body.in .bar .b1{width:var(--w1)}
+.js .chart-body.in .bar .b2{width:var(--w2)}
+.js .chart-body.in .bar .v2{left:var(--w2);opacity:1}
+
+/* 01 — KPI tiles */
+.js .kpis .kpi.rv{transform:translateY(14px) scale(.97)}
+.js .kpis .kpi.rv.in{transform:none}
+.kpi svg{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+@media (hover:hover){.kpi:hover svg{transform:scale(1.15) rotate(-4deg)}}
+
+/* 02 — pillars */
+.js .pillar .circle{opacity:0;transform:scale(.78);
+  transition:opacity .6s ease var(--d,0ms),transform .7s cubic-bezier(.34,1.56,.64,1) var(--d,0ms)}
+.js .pillar.in .circle{opacity:1;transform:none}
+.js .pillar .bannerwrap,.js .pillar .kpi2{opacity:0;transform:translateY(14px);
+  transition:opacity .6s ease calc(var(--d,0ms) + 160ms),transform .6s cubic-bezier(.22,1,.36,1) calc(var(--d,0ms) + 160ms)}
+.js .pillar.in .bannerwrap,.js .pillar.in .kpi2{opacity:1;transform:none}
+.js .pillar.in .circle img{animation:bob 7s ease-in-out infinite}
+.js .pillar.in .circle::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:1.5px solid var(--accent);
+  animation:ring 3.6s ease-out infinite;animation-delay:var(--d,0ms);pointer-events:none}
+.js .pillar .dash{transform-origin:left center;transform:scaleX(0);transition:transform .6s ease calc(var(--d,0ms) + 320ms)}
+.js .pillar.in .dash{transform:scaleX(1)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes ring{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.14);opacity:0}100%{opacity:0}}
+
+/* 03 — diagram */
+.js .s3-diag circle,.js .s3-diag-m circle{transform-box:fill-box;transform-origin:center}
+.js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle{opacity:0;transform:scale(.4);
+  transition:opacity .55s ease var(--d,0ms),transform .6s cubic-bezier(.34,1.56,.64,1) var(--d,0ms)}
+.js .s3-diag.in .nodes circle,.js .s3-diag-m.in .nodes circle{opacity:1;transform:none}
+.js .s3-diag .hubc,.js .s3-diag-m .hubc{opacity:0;transform:scale(.5);transition:opacity .6s ease,transform .7s cubic-bezier(.34,1.56,.64,1)}
+.js .s3-diag.in .hubc,.js .s3-diag-m.in .hubc{opacity:1;transform:none}
+.js .s3-diag .edges line,.js .s3-diag-m .edges line{marker-end:none;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
+  transition:stroke-dashoffset .7s ease var(--d,0ms)}
+.js .s3-diag.in .edges line,.js .s3-diag-m.in .edges line{stroke-dashoffset:0}
+.js .s3-diag.drawn .edges line,.js .s3-diag-m.drawn .edges line{marker-end:url(#egArrow)}
+.js .s3-diag-m.drawn .edges line{marker-end:url(#egArrowM)}
+.js .s3-diag .node{opacity:0;transform:translate(-50%,-50%) scale(.8);
+  transition:opacity .55s ease var(--d,0ms),transform .6s cubic-bezier(.34,1.56,.64,1) var(--d,0ms)}
+.js .s3-diag.in .node{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.js .s3-diag-m .lbl,.js .s3-diag-m .icons{opacity:0;transition:opacity .7s ease .35s}
+.js .s3-diag-m.in .lbl,.js .s3-diag-m.in .icons{opacity:1}
+.pulse{fill:none;transform-box:fill-box;transform-origin:center;opacity:0}
+.s3-diag.in .pulse,.s3-diag-m.in .pulse{animation:hubPulse 3.4s ease-out .8s infinite}
+@keyframes hubPulse{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.4);opacity:0}100%{opacity:0}}
+
+/* 04 — capex columns */
+.js .bars .col i{height:0;transition:height .95s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .bars.in .col i{height:var(--h)}
+.js .bars .v,.js .bars .y{opacity:0;transition:opacity .5s ease calc(var(--d,0ms) + 250ms)}
+.js .bars.in .v,.js .bars.in .y{opacity:1}
+
+/* 05 — value stack */
+.js .bracket{opacity:0;transform:scaleY(.4);transform-origin:center;
+  transition:opacity .5s ease var(--d,0ms),transform .6s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .bracket.in{opacity:1;transform:none}
+@media (hover:hover){
+  .layer{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .layer.rv{transition:opacity .75s cubic-bezier(.22,1,.36,1) var(--d,0ms),transform .75s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+  .layer.rv.in:hover{transform:translateX(6px)}
+  .s4-cards>div.rv.in:hover,.pillar .kpi2:hover{transform:translateY(-4px)}
+  .kpis .kpi.rv.in:hover{transform:translateY(-4px)}
+}
+
+/* kicker rule draw */
+.js .kicker .rule{width:0;transition:width .6s cubic-bezier(.22,1,.36,1) .15s}
+.js .kicker.in .rule{width:24px}
+
+/* header + link underline motion */
+.hdr img{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover){.hdr a:hover img{transform:translateY(-2px)}}
+a{transition:color .25s ease}
+
+/* 4. reduced motion -------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  .fluid span,.fluid .mesh,.band[data-theme="light"]::before{animation:none}
+  .js .rv,.js .rv.in{opacity:1!important;transform:none!important;transition:none!important}
+  .js .chart-body .bar .b1{width:var(--w1)!important}
+  .js .chart-body .bar .b2{width:var(--w2)!important}
+  .js .chart-body .bar .v2{left:var(--w2)!important;opacity:1!important}
+  .js .chart-body::before{transform:none!important}
+  .js .bars .col i{height:var(--h)!important}
+  .js .bars .v,.js .bars .y{opacity:1!important}
+  .js .pillar .circle,.js .pillar .bannerwrap,.js .pillar .kpi2,.js .pillar .dash{opacity:1!important;transform:none!important}
+  .js .pillar.in .circle img{animation:none}
+  .js .pillar.in .circle::after{display:none}
+  .js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle,.js .s3-diag .hubc,.js .s3-diag-m .hubc,
+  .js .s3-diag .node,.js .s3-diag-m .lbl,.js .s3-diag-m .icons{opacity:1!important;transform:translate(-50%,-50%)!important}
+  .js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle,.js .s3-diag .hubc,.js .s3-diag-m .hubc{transform:none!important}
+  .js .s3-diag .edges line,.js .s3-diag-m .edges line{stroke-dashoffset:0!important;marker-end:url(#egArrow)}
+  .js .s3-diag-m .edges line{marker-end:url(#egArrowM)}
+  .pulse{display:none}
+  .js .kicker .rule{width:24px!important}
+  .sprog{display:none}
+  *{scroll-behavior:auto!important}
+}
+
+</style>
+</head>
+<body>
+
+<div class="fluid" aria-hidden="true"><span class="x1"></span><span class="x2"></span><span class="x3"></span><span class="x4"></span><div class="mesh"></div></div>
+
+<header class="hdr">
+  <div class="wrap"><a href="/" aria-label="EGNT home"><img src="img/egnt_logo.png" alt="EGNT"></a></div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Europe is ageing fast.<br><span>AI can help it age better.</span></h1>
+    <ul>
+      <li>81m Europeans are over 65, growing to 96m in 10 years and becoming more digital.</li>
+      <li>Active ageing of body, brain and bonds is worth tens of billions a year.</li>
+      <li>AI removes the digital-skills barrier and unlocks tailored content and services.</li>
+      <li>Trillions of AI capex drive quality up and cost down, enabling healthy unit economics.</li>
+      <li>Relationship, orchestration and model economics create the moats.</li>
+    </ul>
+    <p class="lead">EGNT builds and backs AI-native products.<br>Current focus: an MVP for Europe's ageing population. The investment thesis follows.</p>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="band" data-theme="light" id="s1">
+  <div class="wrap">
+    <div class="kicker"><span class="num">01</span><span class="rule"></span><span class="lbl">Europe 65+ at a glance</span></div>
+    <h2 class="h2">81 million Europeans are 65+, 96 million by 2036.</h2>
+
+    <div class="s1-fig">
+      <img class="s1-map" src="img/europe-map.png" alt="" aria-hidden="true">
+      <span class="caption">Euro area (EA-21), individuals (m)</span>
+      <div class="chart chart-head">
+        <div class="lab" style="font-weight:400;font-size:12px">AGE GROUP</div>
+        <div class="lg"><span><i style="background:var(--a700)"></i>2026</span><span><i style="background:var(--a500)"></i>2036</span></div>
+        <div class="r">10 YRS GROWTH</div>
+      </div>
+      <div class="chart-body">
+        <div class="chart">
+          <div class="lab">85+</div>
+          <div class="bar" style="--w1:39.6%;--w2:48.6%"><div class="b2"></div><div class="b1">12.4</div><div class="v2">15.2</div></div>
+          <div class="pill"><span>+22%</span></div>
+
+          <div class="lab">80–84</div>
+          <div class="bar" style="--w1:35.5%;--w2:45.4%"><div class="b2"></div><div class="b1">11.1</div><div class="v2">14.2</div></div>
+          <div class="pill"><span>+28%</span></div>
+
+          <div class="lab">75–79</div>
+          <div class="bar" style="--w1:52.1%;--w2:60.4%"><div class="b2"></div><div class="b1">16.3</div><div class="v2">18.9</div></div>
+          <div class="pill"><span>+16%</span></div>
+
+          <div class="lab">70–74</div>
+          <div class="bar" style="--w1:60.7%;--w2:73.5%"><div class="b2"></div><div class="b1">19.0</div><div class="v2">23.0</div></div>
+          <div class="pill"><span>+21%</span></div>
+
+          <div class="lab">65–69</div>
+          <div class="bar" style="--w1:71.2%;--w2:78%"><div class="b2"></div><div class="b1">22.3</div><div class="v2">24.4</div></div>
+          <div class="pill"><span>+9%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="k">Share of total pop.</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><div class="n"><b>22%</b><span class="arr">→</span><b class="acc">26%</b></div></div></div>
+      <div class="kpi"><div class="k">Connected, 65–74</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5a15 15 0 0 1 19 0"/><path d="M5.5 13a10.5 10.5 0 0 1 13 0"/><path d="M8.5 16.5a6 6 0 0 1 7 0"/><circle cx="12" cy="20" r="0.7"/></svg><div class="n"><b>81%</b><span class="arr">→</span><b class="acc">93%</b></div></div></div>
+      <div class="kpi"><div class="k">Digital skills, 65–74</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8 12 3 2 8l10 5 10-5Z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg><div class="n"><b>37%</b><span class="arr">→</span><b class="acc">53%</b></div></div></div>
+      <div class="kpi"><div class="k">Yearly spending</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/><path d="M5 9.5v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/><path d="M5 13.5v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/></svg><div class="n"><b>€1.4</b><small>trillion</small></div></div></div>
+      <div class="kpi"><div class="k">Household wealth</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><circle cx="17" cy="14.5" r="1.2"/></svg><div class="n"><b>€185k</b><small>median</small></div></div></div>
+      <div class="kpi"><div class="k">Home ownership</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><div class="n"><b>72%</b></div></div></div>
+    </div>
+
+    <div class="takeaways">
+      <div><p><b>40m in Italy, France &amp; Spain</b>: ~50% of the euro-area total. By 2035, Italians +65 will be 30% of total population.</p></div>
+      <div><p><b>36m (45% of total) are active.</b> Travel, attend cultural events, read and socialise regularly. Half take at least one leisure trip a year.</p></div>
+      <div><p><b>Governments pay the bill.</b> Age-related spending is 27% of GDP in Italy, 30% in France. Long-Term Care (LTC) spending rises 48% by 2070.</p></div>
+    </div>
+    <p class="src">Source: Eurostat demo_pjangroup 2025 &amp; EUROPOP2023 (euro area, EA-21); Eurostat isoc_ci_ifp_iu, isoc_sk_dskl_i21 (2025, 65–74, euro area); EU-SILC; ECB HFCS; EC Ageing Report 2024. Connected = last 3 months; digital skills = at least basic. 2036 connected and skills = today's 55–64 cohort (calc).</p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="band raised" data-theme="light" id="s2">
+  <div class="wrap">
+    <div class="kicker"><span class="num">02</span><span class="rule"></span><span class="lbl">Active ageing is a must</span></div>
+    <h2 class="h2">Active ageing improves lives, saves money and optimizes public resources.</h2>
+
+    <div class="s2">
+      <div class="pillar">
+        <div class="circle"><img src="img/icon-body-bw.png" alt="" aria-hidden="true"></div>
+        <div class="bannerwrap"><div class="banner">Body</div><div class="dash" aria-hidden="true"></div></div>
+        <div class="kpi2"><div class="n">€1.3tn / year</div><div class="d">public spend on health and long-term care</div></div>
+      </div>
+      <div class="pillar">
+        <div class="circle"><img src="img/icon-brain-bw.png" alt="" aria-hidden="true"></div>
+        <div class="bannerwrap"><div class="banner">Brain</div><div class="dash" aria-hidden="true"></div></div>
+        <div class="kpi2 acc"><div class="n">€185bn / year</div><div class="d">cost of dementia in Europe (7.5m cases &gt; 12m in 2050)</div></div>
+      </div>
+      <div class="pillar">
+        <div class="circle"><img class="wide" src="img/icon-bonds-bw.png" alt="" aria-hidden="true"></div>
+        <div class="bannerwrap"><div class="banner">Bonds</div></div>
+        <div class="kpi2"><div class="n">26m live alone</div><div class="d">isolation → dementia risk +57%, mortality +29%</div></div>
+      </div>
+    </div>
+
+    <div class="takeaways">
+      <div><p><b>Dementia alone costs €185bn yearly</b>. A 2-year delay in onset saves ≈ €55bn / year by 2050.</p></div>
+      <div><p><b>Families can save money.</b> 58% of dementia cost, &gt;€100bn, is not covered by public budget.</p></div>
+      <div><p><b>Curiosity strong when UX is easy.</b> 91% 65+ would take a simple check, 79% want to know early.</p></div>
+    </div>
+    <p class="src">Source: EC Ageing Report 2024; Alzheimer Europe / OHE; Lancet Commission 2024; Kuiper 2015; Alzheimer's Association 2025; Eurostat EU-SILC. "Europe" = euro area (EA-21): EU-27 rates applied to EA-21 population and GDP (calc).</p>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="band" data-theme="light" id="s3">
+  <div class="wrap">
+    <div class="kicker"><span class="num">03</span><span class="rule"></span><span class="lbl">AI drives active ageing</span></div>
+    <h2 class="h2">AI serves body, brain and bonds. Starting with effortless digital access.</h2>
+
+    <div class="s3-diag" aria-hidden="true">
+      <svg viewBox="0 0 520 384">
+        <defs><marker id="egArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="var(--line)"/></marker></defs>
+        <g stroke="var(--line)" stroke-width="1.5" marker-end="url(#egArrow)">
+          <line x1="157.4" y1="105.9" x2="206.4" y2="147"/><line x1="362.6" y1="105.9" x2="313.6" y2="147"/>
+          <line x1="394" y1="192" x2="330" y2="192"/><line x1="362.6" y1="278.1" x2="313.6" y2="237"/>
+          <line x1="157.4" y1="278.1" x2="206.4" y2="237"/><line x1="126" y1="192" x2="190" y2="192"/>
+        </g>
+        <g fill="var(--surface)" stroke="var(--border)" stroke-width="1.5">
+          <circle cx="114.5" cy="69.9" r="56"/><circle cx="405.5" cy="69.9" r="56"/><circle cx="450" cy="192" r="56"/>
+          <circle cx="405.5" cy="314.1" r="56"/><circle cx="114.5" cy="314.1" r="56"/><circle cx="70" cy="192" r="56"/>
+        </g>
+        <circle cx="260" cy="192" r="70" fill="var(--accent-surface)" stroke="var(--accent)" stroke-width="2"/>
+      </svg>
+      <div class="node hub" style="left:50%;top:50%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div class="t">Zero-skills UX</div></div>
+      <div class="node" style="left:22%;top:18.2%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H10l-4 4v-4H4z"/></svg><div class="t">Natural<br>conversation</div></div>
+      <div class="node" style="left:78%;top:18.2%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><div class="t">Voice &amp;<br>vision</div></div>
+      <div class="node" style="left:86.5%;top:50%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg><div class="t">Generative<br>content</div></div>
+      <div class="node" style="left:78%;top:81.8%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg><div class="t">Agents<br>that act</div></div>
+      <div class="node" style="left:22%;top:81.8%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 17v3"/></svg><div class="t">Simpler<br>devices</div></div>
+      <div class="node" style="left:13.5%;top:50%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v10h5v-6h2v6h5V10"/></svg><div class="t">Robotics &amp;<br>ambient</div></div>
+    </div>
+
+    <!-- mobile version of the diagram (≤600px) -->
+<div class="s3-diag-m" aria-hidden="true">
+  <svg viewBox="0 0 370 410">
+    <defs><marker id="egArrowM" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="var(--line)"/></marker></defs>
+    <g stroke="var(--line)" stroke-width="1.5" marker-end="url(#egArrowM)">
+      <line x1="185" y1="108" x2="185" y2="137"/>
+      <line x1="269" y1="156.5" x2="243.9" y2="171"/>
+      <line x1="269" y1="253.5" x2="243.9" y2="239"/>
+      <line x1="185" y1="302" x2="185" y2="273"/>
+      <line x1="101" y1="253.5" x2="126.1" y2="239"/>
+      <line x1="101" y1="156.5" x2="126.1" y2="171"/>
+    </g>
+    <g fill="var(--surface)" stroke="var(--border)" stroke-width="1.5">
+      <circle cx="185" cy="55" r="50"/><circle cx="314.9" cy="130" r="50"/><circle cx="314.9" cy="280" r="50"/>
+      <circle cx="185" cy="355" r="50"/><circle cx="55.1" cy="280" r="50"/><circle cx="55.1" cy="130" r="50"/>
+    </g>
+    <circle cx="185" cy="205" r="60" fill="var(--accent-surface)" stroke="var(--accent)" stroke-width="2"/>
+    <g fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <g transform="translate(173 19)"><path d="M4 5h16v11H10l-4 4v-4H4z"/></g>
+      <g transform="translate(302.9 94)"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></g>
+      <g transform="translate(302.9 244)"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></g>
+      <g transform="translate(173 319)"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></g>
+      <g transform="translate(43.1 244)"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 17v3"/></g>
+      <g transform="translate(43.1 94)"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v10h5v-6h2v6h5V10"/></g>
+      <g transform="translate(171 165) scale(1.17)"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></g>
+    </g>
+    <g class="lbl" text-anchor="middle">
+      <text x="185" y="61"><tspan x="185">Natural</tspan><tspan x="185" dy="14">conversation</tspan></text>
+      <text x="314.9" y="136"><tspan x="314.9">Voice &amp;</tspan><tspan x="314.9" dy="14">vision</tspan></text>
+      <text x="314.9" y="286"><tspan x="314.9">Generative</tspan><tspan x="314.9" dy="14">content</tspan></text>
+      <text x="185" y="361"><tspan x="185">Agents</tspan><tspan x="185" dy="14">that act</tspan></text>
+      <text x="55.1" y="286"><tspan x="55.1">Simpler</tspan><tspan x="55.1" dy="14">devices</tspan></text>
+      <text x="55.1" y="136"><tspan x="55.1">Robotics &amp;</tspan><tspan x="55.1" dy="14">ambient</tspan></text>
+      <text class="hub" x="185" y="218">Zero-skills UX</text>
+    </g>
+  </svg>
+</div>
+    <div class="takeaways">
+      <div><p><b>Fill the skill gap.</b> In Italy, 73% of 65–74s are connected and 27% are skilled. France and Spain show the same 40–50 point gap. AI closes it with zero-skills UX.</p></div>
+      <div><p><b>Convergence is fast</b>: voice, vision and agents were lab demos in 2023. Frontier accuracy on Humanity's Last Exam went 9% → 50% in 15 months.</p></div>
+      <div><p><b>Free time is opportunity.</b> 65+ watch TV ~2.8 hours a day, 40% of their free time. AI brings active contents, stimulation, memory and family contact.</p></div>
+    </div>
+    <p class="src">Source: Eurostat isoc_ci_ifp_iu, isoc_sk_dskl_i21 (2025, 65–74); Stanford AI Index 2025/2026 (Humanity's Last Exam, Jan 2025 – Apr 2026); Barlovento 2025; ISTAT 2024.</p>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="band raised" data-theme="light" id="s4">
+  <div class="wrap">
+    <div class="kicker"><span class="num">04</span><span class="rule"></span><span class="lbl">Robust AI ecosystem is ready</span></div>
+    <h2 class="h2">Trillions invested in AI make intelligence cheap, abundant and constantly improving.</h2>
+
+    <div class="s4">
+      <div class="capex">
+        <span class="caption">Top-5 hyperscaler capex, $bn</span>
+        <div class="bars">
+          <div><div class="v">230</div><div class="col"><i style="--h:34%"></i></div><div class="y">2024</div></div>
+          <div><div class="v">380</div><div class="col"><i style="--h:56%"></i></div><div class="y">2025</div></div>
+          <div><div class="v acc">675</div><div class="col"><i class="acc" style="--h:100%"></i></div><div class="y">2026E</div></div>
+        </div>
+        <div class="foot">Amazon · Alphabet · Microsoft · Meta · Oracle</div>
+      </div>
+      <div class="s4-cards">
+        <div class="acc"><div class="n">$1,300bn</div><div class="d">invested in 3 years by 5 companies alone</div></div>
+        <div><div class="n">−99%</div><div class="d">cost per task in 2 years, at constant quality</div></div>
+      </div>
+    </div>
+
+    <div class="takeaways">
+      <div><p><b>Model quality keeps improving.</b> Suppliers compete, and every upgrade is available on day one.</p></div>
+      <div><p><b>Unit economics improve every year.</b> A heavy user costs ~€2/month today, trending down.</p></div>
+      <div><p><b>Access is open.</b> Frontier models are available by API to any team; open models run on-device.</p></div>
+    </div>
+    <p class="src">Source: company guidance (Futurum compilation, 2026E $660–690bn); Stanford AI Index 2025 (inference cost, GPT-3.5-level output, Nov 2022 – Oct 2024); Epoch AI. 2024 figure from company reports, approximate.</p>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="band" data-theme="light" id="s5">
+  <div class="wrap">
+    <div class="kicker"><span class="num">05</span><span class="rule"></span><span class="lbl">Compounding moats</span></div>
+    <h2 class="h2">Relationship, orchestration and model economics compound into long-term value.</h2>
+
+    <div class="stackwrap"><div class="stack">
+      <div class="shead"><span>Layer</span><span>Moat</span></div>
+      <div class="layer l1">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+        <div class="lt"><div class="ln">Relationship</div><div class="ld">Memory, tone, pace, consent</div></div>
+        <div class="lf"><b>Compounding context data</b><span>Each conversation adds memory; switching cost grows with time, for the user and for consented partners.</span></div>
+      </div>
+      <div class="layer l2">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><circle cx="18" cy="5" r="2.5"/><circle cx="12" cy="19" r="2.5"/><path d="M6 7.5v2a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-2M12 12.5v4"/></svg>
+        <div class="lt"><div class="ln">Orchestration</div><div class="ld">Best model per task, EU rules built in</div></div>
+        <div class="lf"><b>Best quality at the lowest cost</b><span>Tasks routed to frontier, general or on-device models (cost index 100 / 10 / 1); consent and EU data residency built in.</span></div>
+      </div>
+      <div class="layer l3">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
+        <div class="lt"><div class="ln">Models</div><div class="ld">Interchangeable suppliers</div></div>
+        <div class="lf"><b>Healthy margins</b><span>Suppliers compete for the app layer. Model cost is a minor share of the price a user pays, and the margin widens over time.</span></div>
+      </div>
+      <div class="bracket" aria-hidden="true"><span>Value accrues here</span></div>
+    </div></div>
+
+    <div class="takeaways">
+      <div><p><b>Context is the key moat.</b> Switching cost grows with every interaction as data compounds. A competitor cannot match the experience on day one.</p></div>
+      <div><p><b>Compliance lives in the router.</b> Consent, EU data residency and logging are enforced once, for every model behind it. New rules land in one place.</p></div>
+      <div><p><b>No supplier lock-in.</b> Models are interchangeable and a swap takes days. A supplier outage triggers automatic fallback. The user sees only the improvement.</p></div>
+    </div>
+    <p class="src">Source: public API price lists (Sep 2026), cost index indicative; GDPR; EU AI Act (Reg. 2024/1689).</p>
+  </div>
+</section>
+
+<!-- progress -->
+<section class="band progress" id="progress">
+  <div class="wrap">
+    <h2>Progress</h2>
+    <p>Concept defined.<br>The work now is market validation, segmentation, distribution and go-to-market.</p>
+    <p>Happy to compare notes with founders and builders in consumer AI, operators who already serve the over-65s, and investors who follow the space. <a href="mailto:egiorgetti@egnt.ai">Write to me</a></p>
+  </div>
+</section>
+
+<!-- about -->
+<section class="band" data-theme="mid" id="about">
+<div class="wrap about">
+  <div class="about-head">
+    <div class="about-id">
+      <h2>Edoardo Giorgetti</h2>
+      <a class="mail" href="mailto:egiorgetti@egnt.ai">egiorgetti@egnt.ai</a>
+    </div>
+    <a class="photo" href="https://www.linkedin.com/in/egiorgetti" target="_blank" rel="noopener"><img src="img/egnt_eg.png" alt="Edoardo Giorgetti"></a>
+  </div>
+  <div class="body">
+    <p>Spent 30+ years building digital-first products — FinecoBank, ePRICE, Nexi YAP — and scaling them into businesses that served millions of customers and reached hundreds of millions in annual revenues. <a href="https://www.linkedin.com/in/egiorgetti" target="_blank" rel="noopener">More on LinkedIn</a></p>
+    <p>Each of them brought a bank, a store or a payment card to customers who had never used one online. The over-65s are the same adoption problem.</p>
+    <p>Now working alongside founders building AI-native products, combining their vision, skills and speed with my experience, hands-on work and capital. <a href="mailto:egiorgetti@egnt.ai">Write to me</a></p>
+    <p>EGNT is my trademark, not yet a company.</p>
+  </div>
+</div>
+</section>
+
+<script>
+(function(){
+  var D=document,W=window;
+  var RM=W.matchMedia&&W.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function Q(s,r){return Array.prototype.slice.call((r||D).querySelectorAll(s));}
+  function C(el){return Array.prototype.slice.call(el.children);}
+  function d(el,ms){el.style.setProperty('--d',ms+'ms');}
+  function cd(el,ms){el.setAttribute('data-cd',ms);}
+
+  /* ---------- scroll progress ---------- */
+  var sp=D.createElement('div');sp.className='sprog';sp.setAttribute('aria-hidden','true');D.body.appendChild(sp);
+  var ticking=false;
+  function prog(){
+    if(ticking)return;ticking=true;
+    W.requestAnimationFrame(function(){
+      var h=D.documentElement.scrollHeight-W.innerHeight;
+      sp.style.transform='scaleX('+(h>0?Math.min(1,W.pageYOffset/h):0)+')';ticking=false;
+    });
+  }
+  W.addEventListener('scroll',prog,{passive:true});W.addEventListener('resize',prog,{passive:true});prog();
+
+  /* ---------- tag: hero + furniture ---------- */
+  Q('.hero h1,.hero li,.hero .lead').forEach(function(el,i){el.classList.add('rv');d(el,80+i*80);});
+  Q('.hdr img').forEach(function(el){el.classList.add('rv');});
+  Q('.kicker').forEach(function(el){el.classList.add('rv');});
+  Q('.h2,.src,.caption,.chart-head,.shead,.progress h2,.progress p,.about-head,.about .body p').forEach(function(el){el.classList.add('rv');});
+  Q('.takeaways').forEach(function(t){C(t).forEach(function(c,i){c.classList.add('rv');d(c,i*120);});});
+
+  /* ---------- 01 chart ---------- */
+  var cb=D.querySelector('.chart-body');
+  if(cb){
+    cb.classList.add('grp');
+    Q('.bar',cb).forEach(function(b,i){
+      d(b,i*120);
+      var b1=b.querySelector('.b1'),v2=b.querySelector('.v2');
+      if(b1){b1.classList.add('cnt');cd(b1,i*120+120);}
+      if(v2){v2.classList.add('cnt');cd(v2,i*120+220);}
+    });
+    Q('.lab',cb).forEach(function(l,i){l.classList.add('rv');d(l,i*120);});
+    Q('.pill',cb).forEach(function(p,i){
+      p.classList.add('rv');d(p,300+i*120);
+      var s=p.querySelector('span');
+      if(s){s.classList.add('cnt');cd(s,i*120+420);}
+    });
+  }
+  Q('.kpis .kpi').forEach(function(k,i){
+    k.classList.add('rv');d(k,i*80);
+    Q('.n b',k).forEach(function(b,j){b.classList.add('cnt');cd(b,i*80+180+j*160);});
+  });
+
+  /* ---------- 02 pillars ---------- */
+  Q('.pillar').forEach(function(p,i){
+    p.classList.add('grp');d(p,i*150);
+    var n=p.querySelector('.kpi2 .n');
+    if(n){n.classList.add('cnt');cd(n,i*150+300);}
+  });
+
+  /* ---------- 03 diagrams ---------- */
+  Q('.s3-diag,.s3-diag-m').forEach(function(dg){
+    dg.classList.add('grp');
+    var svg=dg.querySelector('svg');if(!svg)return;
+    Array.prototype.forEach.call(svg.querySelectorAll('g'),function(g){
+      if(g.querySelector('line'))g.classList.add('edges');
+      else if(g.getAttribute('fill')==='var(--surface)')g.classList.add('nodes');
+      else if(g.getAttribute('stroke')==='var(--accent)')g.classList.add('icons');
+    });
+    var ed=svg.querySelector('g.edges');
+    if(ed){
+      Array.prototype.forEach.call(ed.querySelectorAll('line'),function(ln,i){
+        var L=Math.sqrt(Math.pow(ln.x2.baseVal.value-ln.x1.baseVal.value,2)+Math.pow(ln.y2.baseVal.value-ln.y1.baseVal.value,2));
+        ln.style.setProperty('--len',Math.ceil(L));d(ln,350+i*90);
+      });
+    }
+    var nd=svg.querySelector('g.nodes');
+    if(nd){Array.prototype.forEach.call(nd.querySelectorAll('circle'),function(c,i){d(c,i*90);});}
+    var hub=svg.querySelector('circle[fill="var(--accent-surface)"]');
+    if(hub){
+      hub.setAttribute('class','hubc');
+      var pu=hub.cloneNode(false);
+      pu.setAttribute('class','pulse');pu.setAttribute('fill','none');
+      hub.parentNode.insertBefore(pu,hub);
+    }
+    Q('.node',dg).forEach(function(n,i){d(n,250+i*90);});
+  });
+
+  /* ---------- 04 capex ---------- */
+  var bars=D.querySelector('.bars');
+  if(bars){
+    bars.classList.add('grp');
+    C(bars).forEach(function(col,i){
+      d(col,i*150);
+      var v=col.querySelector('.v');
+      if(v){v.classList.add('cnt');cd(v,i*150+250);}
+    });
+  }
+  Q('.s4-cards>div').forEach(function(c,i){
+    c.classList.add('rv','fromr');d(c,200+i*150);
+    var n=c.querySelector('.n');
+    if(n){n.classList.add('cnt');cd(n,200+i*150+200);}
+  });
+
+  /* ---------- 05 stack ---------- */
+  Q('.layer').forEach(function(l,i){l.classList.add('rv','froml');d(l,i*140);});
+  Q('.bracket').forEach(function(b){b.classList.add('rv');d(b,440);});
+
+  /* ---------- counters ---------- */
+  function count(el){
+    var raw=el.getAttribute('data-raw');if(raw===null)return;
+    var m=raw.match(/\d[\d.,]*/);if(!m){return;}
+    var num=m[0],pre=raw.slice(0,m.index),post=raw.slice(m.index+num.length);
+    var comma=num.indexOf(',')>-1,clean=num.replace(/,/g,'');
+    var dec=(clean.split('.')[1]||'').length,target=parseFloat(clean);
+    if(isNaN(target)){return;}
+    var t0=null,dur=1050;
+    function fmt(v){
+      var s=v.toFixed(dec);
+      if(comma){var p=s.split('.');p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');s=p.join('.');}
+      return s;
+    }
+    function step(ts){
+      if(t0===null)t0=ts;
+      var p=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-p,3);
+      el.textContent=pre+fmt(target*e)+post;
+      if(p<1)W.requestAnimationFrame(step);else el.textContent=raw;
+    }
+    W.requestAnimationFrame(step);
+  }
+  Q('.cnt').forEach(function(el){el.setAttribute('data-raw',el.textContent.trim());});
+  function fire(root){
+    var list=Q('.cnt',root);
+    if(root.classList&&root.classList.contains('cnt'))list.push(root);
+    list.forEach(function(el){
+      if(el.getAttribute('data-done'))return;
+      el.setAttribute('data-done','1');
+      W.setTimeout(function(){count(el);},parseInt(el.getAttribute('data-cd')||'200',10));
+    });
+  }
+
+  /* ---------- observer ---------- */
+  var targets=Q('.rv,.grp');
+  function show(el){
+    el.classList.add('in');
+    fire(el);
+    if(el.classList.contains('s3-diag')||el.classList.contains('s3-diag-m')){
+      W.setTimeout(function(){el.classList.add('drawn');},1400);
+    }
+  }
+  if(RM||!('IntersectionObserver' in W)){
+    targets.forEach(show);
+  }else{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    targets.forEach(function(t){io.observe(t);});
+    /* anything already above the fold on load stays covered by the observer */
+  }
+})();
+</script>
+
+</body>
+</html>
