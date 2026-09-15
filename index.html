@@ -322,6 +322,12 @@ h1,h2,h3{font-weight:800}
 .js .rv.in{opacity:1;transform:none}
 
 /* 01 — bars, axis, pills */
+/* 01 — axis position: .chart-body::before reads --c1, but --c1 is declared on .chart,
+   its own child, so it never inherited and the axis fell back to left:0 (far left edge).
+   Declaring the columns on the shared ancestor puts the axis back at the bars' baseline. */
+.s1-fig{--c1:86px;--c3:108px}
+@media (max-width:620px){.s1-fig{--c1:56px;--c3:76px}}
+
 .js .chart-body::before{transform:scaleY(0);transform-origin:top;transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .js .chart-body.in::before{transform:scaleY(1)}
 .js .chart-body .bar .b1,.js .chart-body .bar .b2{width:0;transition:width 1.05s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
