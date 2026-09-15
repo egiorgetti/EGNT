@@ -270,16 +270,16 @@ body{background:transparent}
 
 .fluid{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;
   background:radial-gradient(130% 95% at 50% -10%,#14162E 0%,#0B0F19 48%,#07090F 100%)}
-.fluid span{position:absolute;display:block;border-radius:50%;filter:blur(90px);will-change:transform;mix-blend-mode:screen}
-.fluid .x1{width:56vw;height:56vw;left:-14vw;top:-12vw;opacity:.55;
+.fluid span{position:absolute;display:block;border-radius:50%;filter:blur(26px);transform:translateZ(0)}
+.fluid .x1{width:56vw;height:56vw;left:-14vw;top:-12vw;opacity:.85;
   background:radial-gradient(circle at 35% 35%,#4C4FCE,rgba(76,79,206,0) 70%);animation:flA 34s ease-in-out infinite}
-.fluid .x2{width:48vw;height:48vw;right:-12vw;top:4vh;opacity:.5;
+.fluid .x2{width:48vw;height:48vw;right:-12vw;top:4vh;opacity:.8;
   background:radial-gradient(circle at 60% 40%,#6366F1,rgba(99,102,241,0) 70%);animation:flB 44s ease-in-out infinite}
-.fluid .x3{width:64vw;height:64vw;left:16vw;bottom:-26vw;opacity:.45;
+.fluid .x3{width:64vw;height:64vw;left:16vw;bottom:-26vw;opacity:.8;
   background:radial-gradient(circle at 50% 50%,#292B78,rgba(41,43,120,0) 70%);animation:flC 52s ease-in-out infinite}
-.fluid .x4{width:34vw;height:34vw;right:12vw;bottom:6vh;opacity:.28;
+.fluid .x4{width:34vw;height:34vw;right:12vw;bottom:6vh;opacity:.5;
   background:radial-gradient(circle at 50% 50%,#8286F2,rgba(130,134,242,0) 70%);animation:flD 38s ease-in-out infinite}
-.fluid .mesh{position:absolute;inset:-25%;
+.fluid .mesh{display:none;position:absolute;inset:-25%;
   background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 96px),
              repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 96px);
   -webkit-mask-image:radial-gradient(70% 55% at 50% 25%,#000,transparent 78%);
@@ -290,6 +290,7 @@ body{background:transparent}
 @keyframes flC{0%,100%{transform:translate3d(0,0,0) scale(1)}40%{transform:translate3d(-14vw,-9vh,0) scale(1.12)}75%{transform:translate3d(9vw,-4vh,0) scale(.94)}}
 @keyframes flD{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-9vw,-14vh,0) scale(1.25)}}
 @keyframes meshDrift{to{transform:translate3d(96px,96px,0)}}
+@media (min-width:900px){.fluid .mesh{display:block}}
 
 /* faint drift inside the light bands too */
 .band{position:relative;overflow:hidden}
@@ -297,7 +298,8 @@ body{background:transparent}
 .band[data-theme="light"]::before{content:"";position:absolute;inset:-30%;z-index:0;pointer-events:none;opacity:.55;
   background:radial-gradient(38% 42% at 22% 18%,rgba(99,102,241,.16),transparent 70%),
              radial-gradient(32% 38% at 82% 78%,rgba(76,79,206,.13),transparent 70%);
-  animation:softDrift 40s ease-in-out infinite}
+  }
+@media (min-width:900px){.band[data-theme="light"]::before{animation:softDrift 40s ease-in-out infinite}}
 @keyframes softDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4%,-3%,0) scale(1.1)}}
 
 /* scroll progress */
@@ -412,8 +414,9 @@ a{transition:color .25s ease}
   .js .pillar.in .circle img{animation:none}
   .js .pillar.in .circle::after{display:none}
   .js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle,.js .s3-diag .hubc,.js .s3-diag-m .hubc,
-  .js .s3-diag .node,.js .s3-diag-m .lbl,.js .s3-diag-m .icons{opacity:1!important;transform:translate(-50%,-50%)!important}
+  .js .s3-diag-m .lbl,.js .s3-diag-m .icons{opacity:1!important;transform:none!important}
   .js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle,.js .s3-diag .hubc,.js .s3-diag-m .hubc{transform:none!important}
+  .js .s3-diag .node{opacity:1!important;transform:translate(-50%,-50%)!important}
   .js .s3-diag .edges line,.js .s3-diag-m .edges line{stroke-dashoffset:0!important;marker-end:url(#egArrow)}
   .js .s3-diag-m .edges line{marker-end:url(#egArrowM)}
   .pulse{display:none}
@@ -857,9 +860,27 @@ a{transition:color .25s ease}
   }else{
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});
-    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    },{threshold:0,rootMargin:'0px 0px -40px 0px'});
     targets.forEach(function(t){io.observe(t);});
-    /* anything already above the fold on load stays covered by the observer */
+    /* fallback sweep: iOS WebKit drops observer callbacks while compositing */
+    var pend=targets.slice(),queued=false;
+    function sweep(){
+      queued=false;
+      var vh=W.innerHeight||D.documentElement.clientHeight,left=[];
+      for(var i=0;i<pend.length;i++){
+        var el=pend[i];
+        if(el.classList.contains('in'))continue;
+        if(el.getBoundingClientRect().top<vh-40){show(el);io.unobserve(el);}
+        else left.push(el);
+      }
+      pend=left;
+    }
+    function qsweep(){if(!queued&&pend.length){queued=true;W.requestAnimationFrame(sweep);}}
+    W.addEventListener('scroll',qsweep,{passive:true});
+    W.addEventListener('resize',qsweep,{passive:true});
+    W.addEventListener('load',qsweep);
+    W.addEventListener('orientationchange',qsweep);
+    qsweep();W.setTimeout(qsweep,500);W.setTimeout(qsweep,1500);
   }
 })();
 </script>
