@@ -3,460 +3,499 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EGNT — Investment thesis: AI for Europe's ageing population</title>
-<meta name="description" content="Europe is ageing fast. AI can help it age better. High-level investment thesis on building an AI-first product for Europe's 80 million people aged 65+.">
+<title>EGNT | Edoardo Giorgetti</title>
+<meta name="description" content="EGNT builds and backs AI-first products for Europe's ageing population. Edoardo Giorgetti — 30+ years in large digital businesses: FinecoBank, ePRICE, Nexi YAP.">
 <meta name="theme-color" content="#0B0F19">
-<link rel="canonical" href="https://egnt.ai/thesis/">
+<link rel="canonical" href="https://egnt.ai">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EGNT">
-<meta property="og:url" content="https://egnt.ai/thesis/">
-<meta property="og:title" content="EGNT — Investment thesis: AI for Europe's ageing population">
-<meta property="og:description" content="Europe is ageing fast. AI can help it age better. High-level investment thesis on building an AI-first product for Europe's 80 million people aged 65+.">
+<meta property="og:url" content="https://egnt.ai">
+<meta property="og:title" content="EGNT | Builds and backs AI-first products">
+<meta property="og:description" content="Europe is ageing fast. AI can help it age better. EGNT builds and backs AI-first products for Europe's 80 million people aged 65+.">
 <meta property="og:image" content="https://egnt.ai/og.png">
+<meta property="og:image:alt" content="EGNT">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/favicon.svg">
+<link rel="preload" href="fonts/GoogleSansFlex-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+/* ---------- fonts (self-hosted) ---------- */
+@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/GoogleSansFlex-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215;}
+@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/GoogleSansFlex-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20AB,U+2113;}
+
+/* ---------- tokens ---------- */
+:root{
+--n100:#F5F5F6;--n200:#E7E7E4;--n300:#C7C7C2;--n400:#9C9CA3;--n500:#71717C;--n600:#4B4B57;--n700:#2E2F40;--n800:#171827;--n900:#0B0F19;
+--a100:#EEEFFD;--a200:#D6D8FB;--a300:#AEB2F6;--a400:#8286F2;--a500:#6366F1;--a600:#4C4FCE;--a700:#3A3CA0;--a800:#292B78;--a900:#1B1D52;
+--bg:var(--n900);--bg-raised:var(--n800);--bg-sunken:#07090F;
+--border:var(--n700);--border-subtle:#21222E;
+--text:var(--n200);--text-2:var(--n300);--text-muted:var(--n400);--text-on-accent:#fff;
+--accent:var(--a500);--accent-hover:var(--a400);
+--surface:var(--n800);--line:var(--n600);--fill-muted:var(--a900);
+--accent-surface:var(--a900);--accent-border:var(--a700);
+--mark-bg:var(--bg-sunken);--mark-text:var(--text);
+--font:'Google Sans Flex',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+--radius:4px;--shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 4px 16px rgba(0,0,0,.5);
+--pad-x:clamp(20px,5vw,56px);--wrap:960px;
+}
+[data-theme="light"]{
+--bg:#FAFAFB;--bg-raised:var(--n100);--bg-sunken:var(--n200);
+--border:var(--n300);--border-subtle:#DEDEDB;
+--text:var(--n900);--text-2:var(--n700);--text-muted:var(--n500);
+--accent:var(--a600);--accent-hover:var(--a500);
+--surface:var(--n100);--line:var(--n400);--fill-muted:var(--a200);
+--accent-surface:var(--a100);--accent-border:var(--a300);
+--mark-bg:var(--n900);--mark-text:var(--n100);
+--shadow-sm:0 1px 2px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.10);
+}
+[data-theme="mid"]{
+--bg:var(--n800);--bg-raised:var(--n700);--bg-sunken:var(--n900);
+--border:var(--n600);--border-subtle:#2E2F40;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;width:100%;max-width:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font);font-weight:700;margin:0}
+p,ul{margin:0}
+img,svg{max-width:100%}
+a{color:var(--accent);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--accent-hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+b{font-weight:700}
+
+/* ---------- layout ---------- */
+.band{background:var(--bg);color:var(--text);padding:clamp(40px,6vw,56px) var(--pad-x)}
+.band.raised{background:var(--bg-raised)}
+.wrap{max-width:var(--wrap);margin:0 auto}
+
+/* ---------- header + hero ---------- */
+.hdr{padding:22px var(--pad-x) 0}
+.hdr .wrap{display:flex;align-items:center}
+.hdr img{height:28px;width:auto;display:block}
+.hero{padding:40px var(--pad-x) clamp(44px,6vw,60px)}
+.hero h1{font-size:clamp(32px,4.8vw,50px);line-height:1.18;letter-spacing:-0.01em;max-width:800px;margin:0 0 30px}
+.hero h1 span{color:var(--accent)}
+.hero ul{list-style:none;padding:0;display:grid;gap:12px;max-width:760px;margin:0 0 26px}
+.hero li{display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.55;color:var(--n100)}
+.hero li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:10px;flex-shrink:0}
+.hero .lead{font-size:17px;line-height:1.5;color:var(--n100);max-width:760px}
+
+/* ---------- section furniture ---------- */
+.kicker{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.kicker .num{font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--accent)}
+.kicker .rule{width:24px;height:1px;background:var(--accent);flex-shrink:0}
+.kicker .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.h2{font-size:clamp(26px,3.2vw,36px);line-height:1.3;letter-spacing:-0.01em;max-width:860px;margin:0 0 24px}
+.takeaways{background:var(--bg-sunken);border:1px solid var(--border-subtle);border-radius:var(--radius);padding:clamp(20px,3vw,30px) clamp(18px,3vw,28px);margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 30px}
+.takeaways>div{border-left:3px solid var(--accent);padding-left:16px}
+.takeaways p{font-size:14px;line-height:1.6;color:var(--text-2)}
+.src{font-size:12px;line-height:1.5;color:var(--text-muted);margin-top:24px;max-width:900px}
+.caption{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+@media (max-width:860px){.takeaways{grid-template-columns:1fr}}
+
+/* ---------- 01 chart ---------- */
+.s1-fig{position:relative;max-width:860px;overflow:hidden;padding-bottom:4px}
+.s1-map{position:absolute;right:0;bottom:0;height:110%;width:auto;opacity:.07;pointer-events:none;user-select:none;z-index:0}
+.s1-fig>*:not(.s1-map){position:relative;z-index:1}
+.s1-fig .caption{margin-bottom:22px;display:block}
+.chart{--c1:86px;--c3:108px;display:grid;grid-template-columns:var(--c1) minmax(0,1fr) var(--c3);align-items:center;row-gap:11px}
+.chart-head{margin-bottom:14px;font-size:12px;color:var(--text-muted)}
+.chart-head .lg{display:flex;gap:28px;padding-left:34px;flex-wrap:wrap}
+.chart-head .lg span{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:var(--text)}
+.chart-head .lg i{width:20px;height:20px;display:inline-block}
+.chart-head .r,.chart .lab{text-align:right;padding-right:18px}
+.chart-head .r{padding-right:0}
+.chart-body{position:relative}
+.chart-body::before{content:"";position:absolute;left:var(--c1);top:0;bottom:0;width:3px;background:var(--text);z-index:2}
+.chart .lab{font-weight:700;font-size:17px}
+.bar{position:relative;height:30px}
+.bar .b2,.bar .b1{position:absolute;left:0;top:0;height:30px}
+.bar .b2{width:var(--w2);background:var(--a500)}
+.bar .b1{width:var(--w1);background:var(--a700);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-weight:600;font-size:16px;color:#fff;font-feature-settings:'tnum' 1;overflow:hidden}
+.bar .v2{position:absolute;left:var(--w2);top:0;height:30px;margin-left:10px;display:flex;align-items:center;white-space:nowrap;font-weight:600;font-size:16px;font-feature-settings:'tnum' 1}
+.chart .pill{display:flex;justify-content:flex-end}
+.chart .pill span{min-width:76px;height:32px;padding:0 12px;border-radius:999px;background:var(--mark-bg);color:var(--mark-text);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;font-feature-settings:'tnum' 1}
+@media (max-width:620px){
+  .chart{--c1:56px;--c3:76px}
+  .chart .lab{font-size:15px;padding-right:12px}
+  .bar .b1,.bar .v2{font-size:14px}
+  .bar .b1{padding-right:6px}
+  .chart .pill span{min-width:64px;height:28px;font-size:14px;padding:0 8px}
+  .chart-head .lg{padding-left:24px;gap:16px}
+}
+
+/* ---------- 01 KPIs ---------- */
+.kpis{margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.kpi{background:var(--bg);padding:18px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kpi .k{font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+.kpi .v{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.kpi svg{width:26px;height:26px;flex-shrink:0;stroke:var(--accent)}
+.kpi .n{display:flex;align-items:baseline;gap:8px}
+.kpi .n b{font-size:clamp(26px,3vw,30px);line-height:1;letter-spacing:-0.01em}
+.kpi .n b.acc{color:var(--accent)}
+.kpi .n .arr{font-size:17px;color:var(--text-muted)}
+.kpi .n small{font-size:15px;color:var(--text-muted)}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.kpis{grid-template-columns:1fr}}
+
+/* ---------- 02 pillars ---------- */
+.s2{--gap:clamp(14px,3vw,30px);max-width:700px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.pillar{display:flex;flex-direction:column;align-items:center;height:100%}
+.pillar .circle{position:relative;width:100%;aspect-ratio:1;border:1.5px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.pillar .circle img{width:64%;height:auto;display:block}
+.pillar .circle img.wide{width:84%}
+.pillar .bannerwrap{position:relative;width:100%;margin-top:-7%;z-index:2}
+.pillar .banner{background:#0B0F19;color:#E7E7E4;text-align:center;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(12px,1.9vw,20px);padding:clamp(8px,1.3vw,14px) 0;clip-path:polygon(clamp(10px,1.8vw,22px) 0,calc(100% - clamp(10px,1.8vw,22px)) 0,100% 50%,calc(100% - clamp(10px,1.8vw,22px)) 100%,clamp(10px,1.8vw,22px) 100%,0 50%)}
+.pillar .dash{position:absolute;top:50%;right:calc(-1 * var(--gap));width:var(--gap);height:1.5px;background:var(--text-muted)}
+.pillar .kpi2{width:100%;flex:1 1 auto;margin-top:clamp(12px,2vw,26px);background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(12px,1.8vw,20px) 10px;text-align:center}
+.pillar .kpi2.acc{background:var(--accent-surface);border-color:var(--accent-border)}
+.pillar .kpi2 .n{font-weight:700;font-size:clamp(17px,2.4vw,26px);line-height:1.1;letter-spacing:-0.01em}
+.pillar .kpi2.acc .n{color:var(--accent)}
+.pillar .kpi2 .d{font-size:clamp(13px,1.4vw,15px);line-height:1.45;color:var(--text-2);margin-top:8px}
+@media (max-width:560px){
+  .s2{grid-template-columns:1fr;gap:16px;max-width:420px}
+  .pillar{display:grid;grid-template-columns:92px minmax(0,1fr);column-gap:16px;row-gap:10px;align-items:center}
+  .pillar .circle{grid-row:1/3;width:92px}
+  .pillar .bannerwrap{margin-top:0;grid-column:2}
+  .pillar .banner{font-size:13px;padding:8px 0}
+  .pillar .dash{display:none}
+  .pillar .kpi2{margin-top:0;grid-column:2;text-align:left;padding:12px 14px}
+  .pillar .kpi2 .n{font-size:20px}
+  .pillar .kpi2 .d{font-size:14px}
+}
+
+/* ---------- 03 diagram ---------- */
+.s3-diag{position:relative;width:min(100%,600px);margin:0 auto;aspect-ratio:520/384;container-type:inline-size}
+.s3-diag>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.node{position:absolute;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:18cqw}
+.node svg{display:block;margin:0 auto 1cqw;width:4.4cqw;height:auto;stroke:var(--accent)}
+.node .t{font-size:2.55cqw;font-weight:600;line-height:1.25}
+.node.hub{width:22cqw}
+.node.hub svg{width:5.5cqw}
+.node.hub .t{font-size:3.2cqw;font-weight:700}
+.s3-list{display:none}
+@media (max-width:600px){
+  .s3-diag{display:none}
+  .s3-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:420px;margin:0 auto}
+  .s3-list .hub{grid-column:1/-1;background:var(--accent-surface);border:1px solid var(--accent);border-radius:var(--radius);padding:14px;text-align:center;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;gap:10px}
+  .s3-list .it{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 10px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;line-height:1.25}
+  .s3-list svg{width:22px;height:22px;flex-shrink:0;stroke:var(--accent)}
+}
+
+/* ---------- 04 capex ---------- */
+.s4{display:flex;gap:clamp(16px,5vw,56px);align-items:center;justify-content:center;flex-wrap:nowrap}
+.capex{flex:0 0 auto;min-width:0}
+.capex .caption{text-align:center;display:block;margin-bottom:18px;font-size:clamp(10px,1.6vw,12px);letter-spacing:.04em}
+.bars{display:flex;align-items:flex-end;gap:clamp(10px,3vw,28px);justify-content:center}
+.bars>div{display:flex;flex-direction:column;align-items:center;gap:8px}
+.bars .v{font-weight:700;font-size:clamp(14px,2.4vw,20px);color:var(--text-2);font-feature-settings:'tnum' 1}
+.bars .v.acc{color:var(--accent)}
+.bars .col{height:clamp(120px,22vw,180px);display:flex;align-items:flex-end}
+.bars .col i{display:block;width:clamp(28px,6vw,56px);height:var(--h);background:var(--fill-muted);border-radius:var(--radius) var(--radius) 0 0}
+.bars .col i.acc{background:var(--accent)}
+.bars .y{font-size:clamp(10px,1.6vw,12px);color:var(--text-muted)}
+.capex .foot{font-size:clamp(9px,1.4vw,11px);color:var(--text-muted);text-align:center;margin-top:14px}
+.s4-cards{display:flex;flex-direction:column;gap:clamp(8px,2vw,16px);flex:0 1 300px;min-width:0}
+.s4-cards>div{border-radius:var(--radius);padding:clamp(10px,2.4vw,20px) clamp(10px,2.6vw,22px);box-shadow:var(--shadow-sm);background:var(--bg);border:1px solid var(--border)}
+.s4-cards>div.acc{background:var(--accent-surface);border-color:var(--accent-border)}
+.s4-cards .n{font-weight:700;font-size:clamp(18px,3.6vw,32px);letter-spacing:-0.01em;line-height:1.1}
+.s4-cards .acc .n{color:var(--accent)}
+.s4-cards .d{font-size:clamp(11.5px,1.7vw,13.5px);line-height:1.45;color:var(--text-2);margin-top:6px}
+@media (max-width:600px){.capex .foot{display:none}}
+
+/* ---------- 05 moats ---------- */
+.s5{position:relative;max-width:940px;margin:0 auto;overflow:hidden;padding:8px 0}
+.s5-rays,.s5-glow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;aspect-ratio:1}
+.s5-rays{height:150%;background:repeating-conic-gradient(from 4deg at 50% 50%,var(--accent) 0deg 1.1deg,transparent 1.1deg 13deg);-webkit-mask-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 28%,rgba(0,0,0,.12) 52%,transparent 70%);mask-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 28%,rgba(0,0,0,.12) 52%,transparent 70%);opacity:.22}
+.s5-glow{height:80%;background:radial-gradient(circle,color-mix(in oklab,var(--accent) 22%,transparent) 0%,transparent 68%)}
+.s5-grid{position:relative;z-index:1;display:grid;gap:clamp(10px,1.5vw,14px);grid-template-areas:"control control control" "people hub models" "data data data";grid-template-columns:1fr 1.1fr 1fr;align-items:center}
+.lay{display:flex;flex-direction:column;gap:8px}
+.lay .k{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.lay.c .k{text-align:center}
+.chips{display:flex;gap:8px}
+.chips.col{flex-direction:column}
+.chip{flex:1 1 0;min-width:0;overflow-wrap:anywhere;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(7px,1vw,10px) clamp(8px,1.2vw,14px);box-shadow:var(--shadow-sm);font-size:clamp(12px,1.4vw,14px);text-align:center;transition:border-color .2s}
+.chip:hover{border-color:var(--accent)}
+.chip .eur{display:inline}
+.hubbox{grid-area:hub;display:flex;justify-content:center}
+.hubbox div{background:var(--accent-surface);border:1px solid var(--accent-border);border-radius:var(--radius);padding:clamp(10px,1.5vw,16px) clamp(14px,2vw,22px);box-shadow:var(--shadow-md);font-weight:700;font-size:clamp(14px,1.8vw,18px);color:var(--accent)}
+@media (max-width:640px){
+  .s5-grid{gap:8px;grid-template-columns:1fr auto 1fr}
+  .lay{gap:6px}
+  .lay .k{font-size:9.5px;letter-spacing:.05em;text-align:center;line-height:1.2}
+  .chips{gap:6px}
+  .chip{font-size:11.5px;padding:7px 5px;line-height:1.25;border-radius:3px}
+  .chip .eur{display:block;font-size:10.5px;color:var(--text-muted);margin-top:1px}
+  .hubbox div{font-size:12.5px;padding:10px 8px;letter-spacing:-0.01em}
+  .s5-rays{height:120%}
+}
+@media (max-width:380px){
+  .chip{font-size:11px;padding:6px 3px}
+  .hubbox div{font-size:12px;padding:8px 6px}
+}
+
+/* ---------- progress + about ---------- */
+.progress{border-top:1px solid var(--border-subtle)}
+.progress .wrap{display:flex;flex-direction:column;gap:14px}
+.progress h2{font-size:clamp(24px,3vw,34px);line-height:1.3;letter-spacing:-0.01em}
+.progress p{font-size:16px;line-height:1.65;color:var(--text-2);max-width:640px}
+.about{display:grid;grid-template-columns:minmax(0,1fr) clamp(98px,16vw,154px);grid-template-areas:"name photo" "body photo";column-gap:clamp(24px,4vw,40px);align-items:start}
+.about h2{grid-area:name;font-size:clamp(20px,2.6vw,28px);letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
+.about .body{grid-area:body;display:flex;flex-direction:column;gap:16px}
+.about .body p{font-size:16px;line-height:1.65;color:var(--text-2);max-width:640px}
+.about .mail{font-size:16px}
+.about .photo{grid-area:photo}
+.about .photo a{display:block}
+.about .photo img{width:100%;display:block;border-radius:var(--radius)}
+@media (max-width:600px){
+  .about{grid-template-areas:"name photo" "body body";grid-template-columns:minmax(0,1fr) 96px;align-items:center;row-gap:20px}
+  .about h2{margin:0}
+}
+</style>
 </head>
 <body>
-<header style="padding:20px clamp(20px,5vw,56px);">
-  <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;">
-  <a href="/" style="display:flex;align-items:center;"><img src="img/egnt_logo.png" alt="EGNT" style="height:26px;width:auto;display:block;"></a>
-  </div>
+
+<header class="hdr">
+  <div class="wrap"><a href="/" aria-label="EGNT home"><img src="img/egnt_logo.png" alt="EGNT"></a></div>
 </header>
 
-<section style="padding:36px clamp(20px,5vw,56px) 49px;">
-  <div style="max-width:960px;margin:0 auto;">
-  <h1 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(34px,4.8vw,50px);line-height:1.22;letter-spacing:-0.01em;max-width:800px;margin:0 0 32px;color:var(--color-text);">Europe is ageing fast.<br><span style="color:var(--color-accent);">AI can help it age better.</span></h1>
-  <ul style="list-style:none;margin:0 0 26px;padding:0;display:grid;gap:12.6px;max-width:760px;">
-    <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.6;color:var(--color-neutral-100);"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); margin-top: 9px; flex-shrink: 0;"></span>80m Europeans are over 65, growing to 93m in 10 years and becoming more digital.</li>
-    <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.6;color:var(--color-neutral-100);"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); margin-top: 9px; flex-shrink: 0;"></span>Active ageing of body, brain and bonds is worth tens of billions a year.</li>
-    <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.6;color:var(--color-neutral-100);"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); margin-top: 9px; flex-shrink: 0;"></span>AI removes the digital-skills barrier, and unlocks tailored content and services.</li>
-    <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.6;color:var(--color-neutral-100);"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); margin-top: 9px; flex-shrink: 0;"></span>Trillions of AI capex drives quality up and cost down, enabling healthy business.</li>
-    <li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.6;color:var(--color-neutral-100);"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); margin-top: 9px; flex-shrink: 0;"></span>Engagement, AI orchestration, EU compliance, compounding data create the moats.</li>
-  </ul>
-  <p style="font-size: 16px; color: var(--color-neutral-100); margin: 0">EGNT is building and backing the MVP development.<br>Read the high-level investment thesis.</p>
+<section class="hero">
+  <div class="wrap">
+    <h1>Europe is ageing fast.<br><span>AI can help it age better.</span></h1>
+    <ul>
+      <li>80m Europeans are over 65, growing to 93m in 10 years and becoming more digital.</li>
+      <li>Active ageing of body, brain and bonds is worth tens of billions a year.</li>
+      <li>AI removes the digital-skills barrier, and unlocks tailored content and services.</li>
+      <li>Trillions of AI capex drives quality up and cost down, enabling healthy business.</li>
+      <li>Engagement, AI orchestration, EU compliance, compounding data create the moats.</li>
+    </ul>
+    <p class="lead">EGNT is building and backing the MVP development.<br>Read the high-level investment thesis.</p>
   </div>
 </section>
 
-<section data-sec="s1" data-theme="light" style="color:var(--color-text);padding:49px clamp(20px,5vw,56px);background:var(--color-bg);--color-surface:var(--color-bg-raised);--color-divider:var(--color-border);">
-  <div style="max-width:960px;margin:0 auto;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-      <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:13px;letter-spacing:0.08em;color:var(--color-accent);">01</span>
-      <span style="width:24px;height:1px;background:var(--color-accent);"></span>
-      <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><span style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted)">EUROPE 65+ AT A GLANCE</span></div>
-    </div>
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(26px,3.2vw,36px);line-height:1.32;letter-spacing:-0.01em;max-width:90%;margin:0 0 20px;color:var(--color-text);">80 millions Europeans over 65, will be 93m in 10 years. Massive, growing, inevitable.</h2>
+<!-- 01 -->
+<section class="band" data-theme="light" id="s1">
+  <div class="wrap">
+    <div class="kicker"><span class="num">01</span><span class="rule"></span><span class="lbl">Europe 65+ at a glance</span></div>
+    <h2 class="h2">80 millions Europeans over 65, will be 93m in 10 years. Massive, growing, inevitable.</h2>
 
-    <div style="position:relative;max-width:860px;">
-      <img src="img/europe-map.png" alt="" aria-hidden="true" style="position:absolute;right:-40px;bottom:-20px;height:112%;width:auto;opacity:0.07;pointer-events:none;user-select:none;z-index:0;">
-      <div style="position:relative;z-index:1;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:22px;">EURO-ZONE (EU-21) INDIVIDUALS (M)</div>
-
-      <div class="eg-chart-row" style="position:relative;z-index:1;display:grid;grid-template-columns:86px minmax(0,1fr) 108px;align-items:center;margin-bottom:14px;">
-        <div style="text-align: right; padding-right: 18px; font-size: 12px; color: var(--color-text-muted)">AGE GROUP</div>
-        <div style="display:flex;gap:32px;padding-left:34px;"><span style="display:inline-flex;align-items:center;gap:10px;"><span style="width: 20px; height: 20px; background: var(--color-accent-700)"></span><span style="font-family: var(--font-heading); font-weight: var(--weight-medium); font-size: 15px; color: var(--color-text)">2026</span></span><span style="display:inline-flex;align-items:center;gap:10px;"><span style="width: 20px; height: 20px; background: var(--color-accent-500)"></span><span style="font-family: var(--font-heading); font-weight: var(--weight-medium); font-size: 15px; color: var(--color-text)">2036</span></span></div>
-        <div style="text-align: right; font-size: 12px; color: var(--color-text-muted)">10 YRS GROWTH</div>
+    <div class="s1-fig">
+      <img class="s1-map" src="img/europe-map.png" alt="" aria-hidden="true">
+      <span class="caption">Euro-zone (EU-21) individuals (m)</span>
+      <div class="chart chart-head">
+        <div class="lab" style="font-weight:400;font-size:12px">AGE GROUP</div>
+        <div class="lg"><span><i style="background:var(--a700)"></i>2026</span><span><i style="background:var(--a500)"></i>2036</span></div>
+        <div class="r">10 YRS GROWTH</div>
       </div>
+      <div class="chart-body">
+        <div class="chart">
+          <div class="lab">85+</div>
+          <div class="bar" style="--w1:39.6%;--w2:48.6%"><div class="b2"></div><div class="b1">12.4</div><div class="v2">15.2</div></div>
+          <div class="pill"><span>+22%</span></div>
 
-      <div style="position:relative;z-index:1;">
-        <div class="eg-chart-axis" style="position:absolute;left:86px;top:0;bottom:0;width:3px;background:var(--color-text);z-index:2;"></div>
-        <div class="eg-chart-row" style="display:grid;grid-template-columns:86px minmax(0,1fr) 108px;align-items:center;row-gap:11px;">
-          <div style="text-align:right;padding-right:18px;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:17px;color:var(--color-text);">85+</div>
-          <div style="position:relative;height:30px;">
-            <div style="position:absolute;left:0;top:0;height:30px;width:48.6%;background:var(--color-accent-500);"></div>
-            <div style="position:absolute;left:0;top:0;height:30px;width:39.6%;background:var(--color-accent-700);display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text-on-accent);font-feature-settings:'tnum' 1;">12,4</div>
-            <div style="position:absolute;left:48.6%;top:0;height:30px;margin-left:12px;display:flex;align-items:center;white-space:nowrap;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text);font-feature-settings:'tnum' 1;">15,2</div>
-          </div>
-          <div style="display:flex;justify-content:flex-end;"><div style="width:82px;height:32px;border-radius:999px;background:var(--color-mark-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:16px;color:var(--color-mark-text);font-feature-settings:'tnum' 1;">+22%</div></div>
+          <div class="lab">80–84</div>
+          <div class="bar" style="--w1:35.5%;--w2:45.4%"><div class="b2"></div><div class="b1">11.1</div><div class="v2">14.2</div></div>
+          <div class="pill"><span>+29%</span></div>
 
-          <div style="text-align:right;padding-right:18px;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:17px;color:var(--color-text);">80–84</div>
-          <div style="position:relative;height:30px;">
-            <div style="position:absolute;left:0;top:0;height:30px;width:45.4%;background:var(--color-accent-500);"></div>
-            <div style="position:absolute;left:0;top:0;height:30px;width:35.5%;background:var(--color-accent-700);display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text-on-accent);font-feature-settings:'tnum' 1;">11,1</div>
-            <div style="position:absolute;left:45.4%;top:0;height:30px;margin-left:12px;display:flex;align-items:center;white-space:nowrap;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text);font-feature-settings:'tnum' 1;">14,2</div>
-          </div>
-          <div style="display:flex;justify-content:flex-end;"><div style="width:82px;height:32px;border-radius:999px;background:var(--color-mark-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:16px;color:var(--color-mark-text);font-feature-settings:'tnum' 1;">+29%</div></div>
+          <div class="lab">75–79</div>
+          <div class="bar" style="--w1:52.1%;--w2:60.4%"><div class="b2"></div><div class="b1">16.3</div><div class="v2">18.9</div></div>
+          <div class="pill"><span>+16%</span></div>
 
-          <div style="text-align:right;padding-right:18px;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:17px;color:var(--color-text);">75–79</div>
-          <div style="position:relative;height:30px;">
-            <div style="position:absolute;left:0;top:0;height:30px;width:60.4%;background:var(--color-accent-500);"></div>
-            <div style="position:absolute;left:0;top:0;height:30px;width:52.1%;background:var(--color-accent-700);display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text-on-accent);font-feature-settings:'tnum' 1;">16,3</div>
-            <div style="position:absolute;left:60.4%;top:0;height:30px;margin-left:12px;display:flex;align-items:center;white-space:nowrap;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text);font-feature-settings:'tnum' 1;">18,9</div>
-          </div>
-          <div style="display:flex;justify-content:flex-end;"><div style="width:82px;height:32px;border-radius:999px;background:var(--color-mark-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:16px;color:var(--color-mark-text);font-feature-settings:'tnum' 1;">+16%</div></div>
+          <div class="lab">70–74</div>
+          <div class="bar" style="--w1:60.7%;--w2:73.5%"><div class="b2"></div><div class="b1">19.0</div><div class="v2">23.0</div></div>
+          <div class="pill"><span>+21%</span></div>
 
-          <div style="text-align:right;padding-right:18px;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:17px;color:var(--color-text);">70–74</div>
-          <div style="position:relative;height:30px;">
-            <div style="position:absolute;left:0;top:0;height:30px;width:73.5%;background:var(--color-accent-500);"></div>
-            <div style="position:absolute;left:0;top:0;height:30px;width:60.7%;background:var(--color-accent-700);display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text-on-accent);font-feature-settings:'tnum' 1;">19,0</div>
-            <div style="position:absolute;left:73.5%;top:0;height:30px;margin-left:12px;display:flex;align-items:center;white-space:nowrap;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text);font-feature-settings:'tnum' 1;">23,0</div>
-          </div>
-          <div style="display:flex;justify-content:flex-end;"><div style="width:82px;height:32px;border-radius:999px;background:var(--color-mark-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:16px;color:var(--color-mark-text);font-feature-settings:'tnum' 1;">+21%</div></div>
-
-          <div style="text-align:right;padding-right:18px;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:17px;color:var(--color-text);">65–69</div>
-          <div style="position:relative;height:30px;">
-            <div style="position:absolute;left:0;top:0;height:30px;width:78.0%;background:var(--color-accent-500);"></div>
-            <div style="position:absolute;left:0;top:0;height:30px;width:71.2%;background:var(--color-accent-700);display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text-on-accent);font-feature-settings:'tnum' 1;">22,3</div>
-            <div style="position:absolute;left:78.0%;top:0;height:30px;margin-left:12px;display:flex;align-items:center;white-space:nowrap;font-family:var(--font-heading);font-weight:var(--weight-medium);font-size:16px;color:var(--color-text);font-feature-settings:'tnum' 1;">24,4</div>
-          </div>
-          <div style="display:flex;justify-content:flex-end;"><div style="width:82px;height:32px;border-radius:999px;background:var(--color-mark-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:16px;color:var(--color-mark-text);font-feature-settings:'tnum' 1;">+10%</div></div>
+          <div class="lab">65–69</div>
+          <div class="bar" style="--w1:71.2%;--w2:78%"><div class="b2"></div><div class="b1">22.3</div><div class="v2">24.4</div></div>
+          <div class="pill"><span>+10%</span></div>
         </div>
       </div>
     </div>
 
-    <div class="eg-kpis">
-      <div class="eg-kpi">
-        <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:10.5px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px;text-align:center;">Share tot. population</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 20v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path></svg>
-          <div style="display:flex;align-items:baseline;gap:8px;">
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">22%</span>
-            <span style="font-size:17px;color:var(--color-text-muted);">→</span>
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-accent);">26%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="eg-kpi">
-        <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:10.5px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px;text-align:center;">Connected</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true"><path d="M2.5 9.5a15 15 0 0 1 19 0"></path><path d="M5.5 13a10.5 10.5 0 0 1 13 0"></path><path d="M8.5 16.5a6 6 0 0 1 7 0"></path><circle cx="12" cy="20" r="0.7"></circle></svg>
-          <div style="display:flex;align-items:baseline;gap:8px;">
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">65%</span>
-            <span style="font-size:17px;color:var(--color-text-muted);">→</span>
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-accent);">80%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="eg-kpi">
-        <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:10.5px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px;text-align:center;">Digital skills</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true"><path d="M22 8 12 3 2 8l10 5 10-5Z"></path><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"></path></svg>
-          <div style="display:flex;align-items:baseline;gap:8px;">
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">33%</span>
-            <span style="font-size:17px;color:var(--color-text-muted);">→</span>
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-accent);">50%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="eg-kpi">
-        <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:10.5px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px;text-align:center;">65+ SPENDING</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true"><path d="M16 6.5A5.5 5.5 0 0 0 7.5 9m0 6A5.5 5.5 0 0 0 16 17.5"></path><path d="M4 10h8M4 14h8"></path></svg>
-          <div style="display:flex;align-items:baseline;gap:8px;">
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">€1.4</span>
-            <span style="font-size:var(--text-body-sm);color:var(--color-text-muted);">trillions</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="eg-kpi">
-        <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:10.5px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px;text-align:center;">Household wealth</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true"><rect x="2.5" y="6" width="19" height="13" rx="2"></rect><path d="M2.5 10h19"></path><circle cx="17" cy="14.5" r="1.2"></circle></svg>
-          <div style="display:flex;align-items:baseline;gap:8px;">
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">€185k</span>
-            <span style="font-size:var(--text-body-sm);color:var(--color-text-muted);">median</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="eg-kpi">
-        <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:10.5px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px;text-align:center;">Home ownership</div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-5h4v5"></path></svg>
-          <div style="display:flex;align-items:baseline;gap:8px;">
-            <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:30px;line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">72%</span>
-          </div>
-        </div>
-      </div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">Share tot. population</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><div class="n"><b>22%</b><span class="arr">→</span><b class="acc">26%</b></div></div></div>
+      <div class="kpi"><div class="k">Connected</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5a15 15 0 0 1 19 0"/><path d="M5.5 13a10.5 10.5 0 0 1 13 0"/><path d="M8.5 16.5a6 6 0 0 1 7 0"/><circle cx="12" cy="20" r="0.7"/></svg><div class="n"><b>65%</b><span class="arr">→</span><b class="acc">80%</b></div></div></div>
+      <div class="kpi"><div class="k">Digital skills</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8 12 3 2 8l10 5 10-5Z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg><div class="n"><b>33%</b><span class="arr">→</span><b class="acc">50%</b></div></div></div>
+      <div class="kpi"><div class="k">65+ spending</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 6.5A5.5 5.5 0 0 0 7.5 9m0 6A5.5 5.5 0 0 0 16 17.5"/><path d="M4 10h8M4 14h8"/></svg><div class="n"><b>€1.4</b><small>trillions</small></div></div></div>
+      <div class="kpi"><div class="k">Household wealth</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><circle cx="17" cy="14.5" r="1.2"/></svg><div class="n"><b>€185k</b><small>median</small></div></div></div>
+      <div class="kpi"><div class="k">Home ownership</div><div class="v"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><div class="n"><b>72%</b></div></div></div>
     </div>
 
-    <div style="background:var(--color-bg-sunken);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:25px 27px;margin-top:30px;">
-    <div class="eg-bullets">
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>40m in Italy, France &amp; Spain</b>: ~50% of total EU-21. In Italy, 65+ are 25% of total population, will be 30% in 2035. In Spain, 65+ will grow by 28% in 10 years.</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>36m (45% of total) are active.</b> Travel, attend cultural events, read and socialise regularly. Half take at least one leisure trip a year.&nbsp;</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Governments pay the bill.</b> Age-related spending is 27% of GDP in Italy, 30% in France. Long-Term Care (LTC) spending rises 48% by 2070.</p></div>
+    <div class="takeaways">
+      <div><p><b>40m in Italy, France &amp; Spain</b>: ~50% of total EU-21. In Italy, 65+ are 25% of total population, will be 30% in 2035. In Spain, 65+ will grow by 28% in 10 years.</p></div>
+      <div><p><b>36m (45% of total) are active.</b> Travel, attend cultural events, read and socialise regularly. Half take at least one leisure trip a year.</p></div>
+      <div><p><b>Governments pay the bill.</b> Age-related spending is 27% of GDP in Italy, 30% in France. Long-Term Care (LTC) spending rises 48% by 2070.</p></div>
     </div>
-    </div>
-
-    <p style="font-size:12px;line-height:1.5;color:var(--color-text-muted);margin:26px 0 0;max-width:900px;">Source: Eurostat demo_pjangroup 2025 &amp; EUROPOP2023; Eurostat Skills for the digital age 2025; EU-SILC; ECB HFCS; EC Ageing Report 2024. Digital = at least basic digital skills.</p>
+    <p class="src">Source: Eurostat demo_pjangroup 2025 &amp; EUROPOP2023; Eurostat Skills for the digital age 2025; EU-SILC; ECB HFCS; EC Ageing Report 2024. Digital = at least basic digital skills.</p>
   </div>
 </section>
 
-<section data-sec="s2" data-theme="light" style="color:var(--color-text);padding:49px clamp(20px,5vw,56px);background:var(--color-bg-raised);--color-surface:var(--color-bg-raised);--color-divider:var(--color-border);">
-  <div style="max-width:960px;margin:0 auto;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-      <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:13px;letter-spacing:0.08em;color:var(--color-accent);">02</span>
-      <span style="width:24px;height:1px;background:var(--color-accent);"></span>
-      <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);">ACTIVE AGEING IS A MUST</span>
-    </div>
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(26px,3.2vw,36px);line-height:1.32;letter-spacing:-0.01em;max-width:90%;margin:0 0 20px;color:var(--color-text);">Active ageing improves lives, saves money, optimize resource allocation.</h2>
+<!-- 02 -->
+<section class="band raised" data-theme="light" id="s2">
+  <div class="wrap">
+    <div class="kicker"><span class="num">02</span><span class="rule"></span><span class="lbl">Active ageing is a must</span></div>
+    <h2 class="h2">Active ageing improves lives, saves money, optimize resource allocation.</h2>
 
-    <div class="eg-s2-outer"><div class="eg-s2">
-      <div class="eg-s2-pillar">
-        <div class="eg-s2-circle"><img src="img/icon-body-bw.png" alt="" aria-hidden="true"></div>
-        <div class="eg-s2-bannerwrap"><div class="eg-s2-banner">Body</div><div class="eg-s2-dash" aria-hidden="true"></div></div>
-        <div class="eg-s2-kpi" style="background:var(--color-bg-raised);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(7px,1.9cqi,20px);text-align:center;">
-          <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(13px,2.9cqi,30px);line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">€1.5tn / year</div>
-          <div style="font-size:clamp(12px,1.6cqi,16px);line-height:1.5;color:var(--color-text-secondary);margin-top:8px;">public spend on health and long-term care</div>
-        </div>
+    <div class="s2">
+      <div class="pillar">
+        <div class="circle"><img src="img/icon-body-bw.png" alt="" aria-hidden="true"></div>
+        <div class="bannerwrap"><div class="banner">Body</div><div class="dash" aria-hidden="true"></div></div>
+        <div class="kpi2"><div class="n">€1.5tn / year</div><div class="d">public spend on health and long-term care</div></div>
       </div>
-      <div class="eg-s2-pillar">
-        <div class="eg-s2-circle"><img src="img/icon-brain-bw.png" alt="" aria-hidden="true"></div>
-        <div class="eg-s2-bannerwrap"><div class="eg-s2-banner">Brain</div><div class="eg-s2-dash" aria-hidden="true"></div></div>
-        <div class="eg-s2-kpi" style="background:var(--color-accent-surface);border:1px solid var(--color-accent-border);border-radius:var(--radius-md);padding:clamp(7px,1.9cqi,20px);text-align:center;">
-          <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(13px,2.9cqi,30px);line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-accent);">€220bn / year</div>
-          <div style="font-size:clamp(12px,1.6cqi,16px);line-height:1.5;color:var(--color-text-secondary);margin-top:8px;">cost of dementia in Europe<br>(9m cases &gt; 14m in 2035)</div>
-        </div>
+      <div class="pillar">
+        <div class="circle"><img src="img/icon-brain-bw.png" alt="" aria-hidden="true"></div>
+        <div class="bannerwrap"><div class="banner">Brain</div><div class="dash" aria-hidden="true"></div></div>
+        <div class="kpi2 acc"><div class="n">€220bn / year</div><div class="d">cost of dementia in Europe (9m cases &gt; 14m in 2035)</div></div>
       </div>
-      <div class="eg-s2-pillar">
-        <div class="eg-s2-circle"><img class="eg-icon-bonds" src="img/icon-bonds-bw.png" alt="" aria-hidden="true"></div>
-        <div class="eg-s2-bannerwrap"><div class="eg-s2-banner">Bonds</div></div>
-        <div class="eg-s2-kpi" style="background:var(--color-bg-raised);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(7px,1.9cqi,20px);text-align:center;">
-          <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(13px,2.9cqi,30px);line-height:1;letter-spacing:var(--tracking-tight);color:var(--color-text);">32m live alone</div>
-          <div style="font-size:clamp(12px,1.6cqi,16px);line-height:1.5;color:var(--color-text-secondary);margin-top:8px;">Isolation raises dementia risk by 57%, mortality by 29%</div>
-        </div>
+      <div class="pillar">
+        <div class="circle"><img class="wide" src="img/icon-bonds-bw.png" alt="" aria-hidden="true"></div>
+        <div class="bannerwrap"><div class="banner">Bonds</div></div>
+        <div class="kpi2"><div class="n">32m live alone</div><div class="d">Isolation raises dementia risk by 57%, mortality by 29%</div></div>
       </div>
-    </div></div>
+    </div>
 
-    <div style="background:var(--color-bg-sunken);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:30px 28px;margin-top:34px;">
-    <div class="eg-bullets">
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Dementia alone costs €220bn yearly</b>. Milder decline adds to the bill. Delaying onset easily saves €20–35bn / year.</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Families can save money.</b> 58% of dementia cost, &gt;€100bn, is not covered by public budget.</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Curiosity strong when UX is easy. </b>91% 65+ would take a simple check, 79% want to know early.<br></p></div>
+    <div class="takeaways">
+      <div><p><b>Dementia alone costs €220bn yearly</b>. Milder decline adds to the bill. Delaying onset easily saves €20–35bn / year.</p></div>
+      <div><p><b>Families can save money.</b> 58% of dementia cost, &gt;€100bn, is not covered by public budget.</p></div>
+      <div><p><b>Curiosity strong when UX is easy.</b> 91% 65+ would take a simple check, 79% want to know early.</p></div>
     </div>
-    </div>
-    <p style="font-size:12px;line-height:1.5;color:var(--color-text-muted);margin:26px 0 0;max-width:900px;">Source: EC Ageing Report 2024; Alzheimer Europe / OHE; Lancet Commission 2024; Kuiper 2015; Alzheimer's Association 2025; Eurostat EU-SILC.</p>
+    <p class="src">Source: EC Ageing Report 2024; Alzheimer Europe / OHE; Lancet Commission 2024; Kuiper 2015; Alzheimer's Association 2025; Eurostat EU-SILC.</p>
   </div>
 </section>
 
-<section data-sec="s3" data-theme="light" style="color:var(--color-text);padding:49px clamp(20px,5vw,56px);background:var(--color-bg);--color-surface:var(--color-bg-raised);--color-divider:var(--color-border);">
-  <div style="max-width:960px;margin:0 auto;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-      <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:13px;letter-spacing:0.08em;color:var(--color-accent);">03</span>
-      <span style="width:24px;height:1px;background:var(--color-accent);"></span>
-      <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);">AI DRIVES ACTIVE AGEING</span>
-    </div>
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(26px,3.2vw,36px);line-height:1.32;letter-spacing:-0.01em;max-width:90%;margin:0 0 16px;color:var(--color-text);">AI serves body, brain and bonds. Starting with effortless digital access.</h2>
+<!-- 03 -->
+<section class="band" data-theme="light" id="s3">
+  <div class="wrap">
+    <div class="kicker"><span class="num">03</span><span class="rule"></span><span class="lbl">AI drives active ageing</span></div>
+    <h2 class="h2">AI serves body, brain and bonds. Starting with effortless digital access.</h2>
 
-    <div style="position:relative;width:100%;width:68%;max-width:673px;margin:0 auto;aspect-ratio:520/384;container-type:inline-size;">
-      <svg viewBox="0 0 520 384" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;">
-        <defs><marker id="egArrowS3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="var(--color-line)"></path></marker></defs>
-        <line x1="157.4" y1="105.9" x2="206.4" y2="147" stroke="var(--color-line)" stroke-width="1.5" marker-end="url(#egArrowS3)"></line>
-        <line x1="362.6" y1="105.9" x2="313.6" y2="147" stroke="var(--color-line)" stroke-width="1.5" marker-end="url(#egArrowS3)"></line>
-        <line x1="394" y1="192" x2="330" y2="192" stroke="var(--color-line)" stroke-width="1.5" marker-end="url(#egArrowS3)"></line>
-        <line x1="362.6" y1="278.1" x2="313.6" y2="237" stroke="var(--color-line)" stroke-width="1.5" marker-end="url(#egArrowS3)"></line>
-        <line x1="157.4" y1="278.1" x2="206.4" y2="237" stroke="var(--color-line)" stroke-width="1.5" marker-end="url(#egArrowS3)"></line>
-        <line x1="126" y1="192" x2="190" y2="192" stroke="var(--color-line)" stroke-width="1.5" marker-end="url(#egArrowS3)"></line>
-        <circle cx="114.5" cy="69.9" r="56" style="fill:var(--color-surface);stroke:var(--color-border);strokeWidth:1.5;"></circle>
-        <circle cx="405.5" cy="69.9" r="56" style="fill:var(--color-surface);stroke:var(--color-border);strokeWidth:1.5;"></circle>
-        <circle cx="450" cy="192" r="56" style="fill:var(--color-surface);stroke:var(--color-border);strokeWidth:1.5;"></circle>
-        <circle cx="405.5" cy="314.1" r="56" style="fill:var(--color-surface);stroke:var(--color-border);strokeWidth:1.5;"></circle>
-        <circle cx="114.5" cy="314.1" r="56" style="fill:var(--color-surface);stroke:var(--color-border);strokeWidth:1.5;"></circle>
-        <circle cx="70" cy="192" r="56" style="fill:var(--color-surface);stroke:var(--color-border);strokeWidth:1.5;"></circle>
-        <circle cx="260" cy="192" r="70" style="fill:var(--color-accent-surface);stroke:var(--color-accent);strokeWidth:2;"></circle>
+    <div class="s3-diag" aria-hidden="true">
+      <svg viewBox="0 0 520 384">
+        <defs><marker id="egArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="var(--line)"/></marker></defs>
+        <g stroke="var(--line)" stroke-width="1.5" marker-end="url(#egArrow)">
+          <line x1="157.4" y1="105.9" x2="206.4" y2="147"/><line x1="362.6" y1="105.9" x2="313.6" y2="147"/>
+          <line x1="394" y1="192" x2="330" y2="192"/><line x1="362.6" y1="278.1" x2="313.6" y2="237"/>
+          <line x1="157.4" y1="278.1" x2="206.4" y2="237"/><line x1="126" y1="192" x2="190" y2="192"/>
+        </g>
+        <g fill="var(--surface)" stroke="var(--border)" stroke-width="1.5">
+          <circle cx="114.5" cy="69.9" r="56"/><circle cx="405.5" cy="69.9" r="56"/><circle cx="450" cy="192" r="56"/>
+          <circle cx="405.5" cy="314.1" r="56"/><circle cx="114.5" cy="314.1" r="56"/><circle cx="70" cy="192" r="56"/>
+        </g>
+        <circle cx="260" cy="192" r="70" fill="var(--accent-surface)" stroke="var(--accent)" stroke-width="2"/>
       </svg>
-
-      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(78px,17cqw,166px);">
-        <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto clamp(2px,0.9cqw,7px);display:block;width:clamp(11px,3.8cqw,32px);height:auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
-        <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(9px,2.8cqw,27px);line-height:1.2;color:var(--color-text);">Zero-skills UX</div>
-      </div>
-
-      <div style="position:absolute;left:22%;top:18.2%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(64px,15cqw,146px);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto clamp(2px,0.8cqw,6px);display:block;width:clamp(9px,3.2cqw,28px);height:auto;"><path d="M4 5h16v11H10l-4 4v-4H4z"></path></svg>
-        <div style="font-size:clamp(7px,2.3cqw,22px);font-weight:500;color:var(--color-text);line-height:1.25;">Natural<br>conversation</div>
-      </div>
-      <div style="position:absolute;left:78%;top:18.2%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(64px,15cqw,146px);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto clamp(2px,0.8cqw,6px);display:block;width:clamp(9px,3.2cqw,28px);height:auto;"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        <div style="font-size:clamp(7px,2.3cqw,22px);font-weight:500;color:var(--color-text);line-height:1.25;">Voice &amp;<br>vision</div>
-      </div>
-      <div style="position:absolute;left:86.5%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(64px,15cqw,146px);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto clamp(2px,0.8cqw,6px);display:block;width:clamp(9px,3.2cqw,28px);height:auto;"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"></path></svg>
-        <div style="font-size:clamp(7px,2.3cqw,22px);font-weight:500;color:var(--color-text);line-height:1.25;">Generative<br>content</div>
-      </div>
-      <div style="position:absolute;left:78%;top:81.8%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(64px,15cqw,146px);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto clamp(2px,0.8cqw,6px);display:block;width:clamp(9px,3.2cqw,28px);height:auto;"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"></path></svg>
-        <div style="font-size:clamp(7px,2.3cqw,22px);font-weight:500;color:var(--color-text);line-height:1.25;">Agents<br>that act</div>
-      </div>
-      <div style="position:absolute;left:22%;top:81.8%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(64px,15cqw,146px);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto clamp(2px,0.8cqw,6px);display:block;width:clamp(9px,3.2cqw,28px);height:auto;"><rect x="3" y="5" width="18" height="12" rx="1.5"></rect><path d="M9 20h6M12 17v3"></path></svg>
-        <div style="font-size:clamp(7px,2.3cqw,22px);font-weight:500;color:var(--color-text);line-height:1.25;">Simpler<br>devices</div>
-      </div>
-      <div style="position:absolute;left:13.5%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;width:clamp(64px,15cqw,146px);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto clamp(2px,0.8cqw,6px);display:block;width:clamp(9px,3.2cqw,28px);height:auto;"><path d="M4 11.5L12 4l8 7.5"></path><path d="M6 10v10h5v-6h2v6h5V10"></path></svg>
-        <div style="font-size:clamp(7px,2.3cqw,22px);font-weight:500;color:var(--color-text);line-height:1.25;">Robotics &amp;<br>ambient</div>
-      </div>
+      <div class="node hub" style="left:50%;top:50%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div class="t">Zero-skills UX</div></div>
+      <div class="node" style="left:22%;top:18.2%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H10l-4 4v-4H4z"/></svg><div class="t">Natural<br>conversation</div></div>
+      <div class="node" style="left:78%;top:18.2%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><div class="t">Voice &amp;<br>vision</div></div>
+      <div class="node" style="left:86.5%;top:50%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg><div class="t">Generative<br>content</div></div>
+      <div class="node" style="left:78%;top:81.8%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg><div class="t">Agents<br>that act</div></div>
+      <div class="node" style="left:22%;top:81.8%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 17v3"/></svg><div class="t">Simpler<br>devices</div></div>
+      <div class="node" style="left:13.5%;top:50%"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v10h5v-6h2v6h5V10"/></svg><div class="t">Robotics &amp;<br>ambient</div></div>
     </div>
 
-    <div style="background:var(--color-bg-sunken);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:30px 28px;margin-top:34px;">
-    <div class="eg-bullets">
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Fill the skill gap.&nbsp;</b>73% of 65+ in Italy are connected, but only 27% are skilled. Similar in France &amp; Spain. AI closes the gap with zero-skills UX.<br></p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Convergence is fast</b>: voice, vision and agents were lab demos in 2023. Frontier accuracy on hardest exams went 9% → 50% in 15 months.</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Free time is opportunity.</b>&nbsp;65+ watch TV ~2.8 hours a day, 40% of their free time. AI brings active contents, stimulation, memory and family contact.</p></div>
+    <!-- same content, list layout for narrow screens -->
+    <div class="s3-list">
+      <div class="hub"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>Zero-skills UX</div>
+      <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-4 4v-4H4z"/></svg>Natural conversation</div>
+      <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>Voice &amp; vision</div>
+      <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>Generative content</div>
+      <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg>Agents that act</div>
+      <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 17v3"/></svg>Simpler devices</div>
+      <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v10h5v-6h2v6h5V10"/></svg>Robotics &amp; ambient</div>
     </div>
+
+    <div class="takeaways">
+      <div><p><b>Fill the skill gap.</b> 73% of 65+ in Italy are connected, but only 27% are skilled. Similar in France &amp; Spain. AI closes the gap with zero-skills UX.</p></div>
+      <div><p><b>Convergence is fast</b>: voice, vision and agents were lab demos in 2023. Frontier accuracy on hardest exams went 9% → 50% in 15 months.</p></div>
+      <div><p><b>Free time is opportunity.</b> 65+ watch TV ~2.8 hours a day, 40% of their free time. AI brings active contents, stimulation, memory and family contact.</p></div>
     </div>
-    <p style="font-size:12px;line-height:1.5;color:var(--color-text-muted);margin:26px 0 0;max-width:900px;">Source: Eurostat isoc_ci_ifp_iu, isoc_sk_dskl_i21, Use of AI by individuals 2025 (EU-27); Stanford AI Index 2026; Barlovento 2025; ISTAT 2024.</p>
+    <p class="src">Source: Eurostat isoc_ci_ifp_iu, isoc_sk_dskl_i21, Use of AI by individuals 2025 (EU-27); Stanford AI Index 2026; Barlovento 2025; ISTAT 2024.</p>
   </div>
 </section>
 
-<section data-sec="s4" data-theme="light" style="color:var(--color-text);padding:49px clamp(20px,5vw,56px);background:var(--color-bg-raised);--color-surface:var(--color-bg-raised);--color-divider:var(--color-border);">
-  <div style="max-width:960px;margin:0 auto;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-      <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:13px;letter-spacing:0.08em;color:var(--color-accent);">04</span>
-      <span style="width:24px;height:1px;background:var(--color-accent);"></span>
-      <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);">ROBUST AI ECOSYSTEM IS READY</span>
-    </div>
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(26px,3.2vw,36px);line-height:1.32;letter-spacing:-0.01em;max-width:90%;margin:0 0 18px;color:var(--color-text);">Trillions invested in AI make intelligence cheap, abundant and constantly improving.</h2>
+<!-- 04 -->
+<section class="band raised" data-theme="light" id="s4">
+  <div class="wrap">
+    <div class="kicker"><span class="num">04</span><span class="rule"></span><span class="lbl">Robust AI ecosystem is ready</span></div>
+    <h2 class="h2">Trillions invested in AI make intelligence cheap, abundant and constantly improving.</h2>
 
-    <div style="display:flex;gap:56px;flex-wrap:wrap;align-items:center;justify-content:center;">
-      <div>
-        <div style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-muted);text-align:center;margin-bottom:18px;">Top-5 hyperscaler capex, $bn</div>
-        <div style="display:flex;align-items:flex-end;gap:28px;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-            <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:20px;color:var(--color-text-secondary);font-feature-settings:'tnum' 1;">230</div>
-            <div style="position:relative;height:180px;display:flex;align-items:flex-end;">
-              <div style="height:61px;width:56px;background:var(--color-fill-muted);border-radius:var(--radius-md) var(--radius-md) 0 0;"></div>
-            </div>
-            <div style="font-size:12px;color:var(--color-text-muted);">2024</div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-            <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:20px;color:var(--color-text-secondary);font-feature-settings:'tnum' 1;">380</div>
-            <div style="position:relative;height:180px;display:flex;align-items:flex-end;">
-              <div style="height:101px;width:56px;background:var(--color-fill-muted);border-radius:var(--radius-md) var(--radius-md) 0 0;"></div>
-            </div>
-            <div style="font-size:12px;color:var(--color-text-muted);">2025</div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-            <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:20px;color:var(--color-accent);font-feature-settings:'tnum' 1;">675</div>
-            <div style="position:relative;height:180px;display:flex;align-items:flex-end;">
-              <div style="height:180px;width:56px;background:var(--color-accent);border-radius:var(--radius-md) var(--radius-md) 0 0;"></div>
-            </div>
-            <div style="font-size:12px;color:var(--color-text-muted);">2026E</div>
-          </div>
+    <div class="s4">
+      <div class="capex">
+        <span class="caption">Top-5 hyperscaler capex, $bn</span>
+        <div class="bars">
+          <div><div class="v">230</div><div class="col"><i style="--h:34%"></i></div><div class="y">2024</div></div>
+          <div><div class="v">380</div><div class="col"><i style="--h:56%"></i></div><div class="y">2025</div></div>
+          <div><div class="v acc">675</div><div class="col"><i class="acc" style="--h:100%"></i></div><div class="y">2026E</div></div>
         </div>
-        <div style="font-size:11px;color:var(--color-text-muted);text-align:center;margin-top:14px;">Amazon · Alphabet · Microsoft · Meta · Oracle</div>
+        <div class="foot">Amazon · Alphabet · Microsoft · Meta · Oracle</div>
       </div>
-
-      <div style="display:flex;flex-direction:column;gap:16px;min-width:240px;max-width:300px;">
-        <div style="background:var(--color-accent-surface);border:1px solid var(--color-accent-border);border-radius:var(--radius-md);padding:20px 22px;box-shadow:var(--shadow-sm);">
-          <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:32px;letter-spacing:-0.01em;color:var(--color-accent);">$1.300bn</div>
-          <div style="font-size:13.5px;line-height:1.5;color:var(--color-text-secondary);margin-top:6px;">invested in 3 years by 5 companies alone</div>
-        </div>
-        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:20px 22px;box-shadow:var(--shadow-sm);">
-          <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:32px;letter-spacing:-0.01em;color:var(--color-text);">$581bn</div>
-          <div style="font-size:13.5px;line-height:1.5;color:var(--color-text-secondary);margin-top:6px;">invested by private companies, 2,3x vs. previous year, accelerating</div>
-        </div>
+      <div class="s4-cards">
+        <div class="acc"><div class="n">$1,300bn</div><div class="d">invested in 3 years by 5 companies alone</div></div>
+        <div><div class="n">$581bn</div><div class="d">invested by private companies, 2.3x vs. previous year, accelerating</div></div>
       </div>
     </div>
 
-    <div style="background:var(--color-bg-sunken);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:30px 28px;margin-top:34px;">
-    <div class="eg-bullets">
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Model quality keeps improving. </b>Suppliers compete, and every upgrade is available on day one.</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Unit economics constantly improve. </b>An heavy user cost ~2€ / mo, allowing fair pricing at healthy margins.</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Owning the user is key.</b> Models converge; relationship, data and margins compound.</p></div>
+    <div class="takeaways">
+      <div><p><b>Model quality keeps improving.</b> Suppliers compete, and every upgrade is available on day one.</p></div>
+      <div><p><b>Unit economics constantly improve.</b> An heavy user cost ~2€ / mo, allowing fair pricing at healthy margins.</p></div>
+      <div><p><b>Owning the user is key.</b> Models converge; relationship, data and margins compound.</p></div>
     </div>
-    </div>
-    <p style="font-size:12px;line-height:1.5;color:var(--color-text-muted);margin:26px 0 0;max-width:900px;">Source: company guidance (Futurum compilation, 2026E $660–690bn); Stanford AI Index 2025/2026; Epoch AI. 2024 figure from company reports, approximate.</p>
+    <p class="src">Source: company guidance (Futurum compilation, 2026E $660–690bn); Stanford AI Index 2025/2026; Epoch AI. 2024 figure from company reports, approximate.</p>
   </div>
 </section>
 
-<section data-sec="s5" data-theme="light" style="color:var(--color-text);padding:49px clamp(20px,5vw,56px);background:var(--color-bg);--color-surface:var(--color-bg-raised);--color-divider:var(--color-border);">
-  <div style="max-width:960px;margin:0 auto;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-      <span style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:13px;letter-spacing:0.08em;color:var(--color-accent);">05</span>
-      <span style="width:24px;height:1px;background:var(--color-accent);"></span>
-      <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);">COMPOUNDING MOATS</span>
+<!-- 05 -->
+<section class="band" data-theme="light" id="s5">
+  <div class="wrap">
+    <div class="kicker"><span class="num">05</span><span class="rule"></span><span class="lbl">Compounding moats</span></div>
+    <h2 class="h2">Engagement, orchestration, memory and EU compliance compound into long-term value.</h2>
+
+    <div class="s5">
+      <div class="s5-rays" aria-hidden="true"></div><div class="s5-glow" aria-hidden="true"></div>
+      <div class="s5-grid">
+        <div class="lay c" style="grid-area:control"><div class="k">Policy layer</div><div class="chips"><div class="chip">Guardrails</div><div class="chip">Billing</div><div class="chip">EU GDPR</div></div></div>
+        <div class="lay" style="grid-area:people"><div class="k">Customer engagement</div><div class="chips col"><div class="chip">Individual</div><div class="chip">Family</div><div class="chip">Friends</div></div></div>
+        <div class="hubbox"><div>Orchestration</div></div>
+        <div class="lay" style="grid-area:models"><div class="k">AI optimization</div><div class="chips col long"><div class="chip">Frontier reasoning <span class="eur">€€€</span></div><div class="chip">General conversation <span class="eur">€€</span></div><div class="chip">Small &amp; on-device <span class="eur">€</span></div></div></div>
+        <div class="lay c" style="grid-area:data"><div class="k">Context layer</div><div class="chips"><div class="chip">Memory</div><div class="chip">Contents</div><div class="chip">Services</div></div></div>
+      </div>
     </div>
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(26px,3.2vw,36px);line-height:1.32;letter-spacing:-0.01em;max-width:90%;margin:0 0 18px;color:var(--color-text);">Engagement, orchestration, memory and EU compliance compound into long-term value.</h2>
 
-    <div class="eg-s5-wrap"><div class="eg-s5-rays" aria-hidden="true"></div><div class="eg-s5-glow" aria-hidden="true"></div><div class="eg-s5-grid">
-      <div style="grid-area:people;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <span style="font-size:clamp(7px,1.3cqi,10.5px);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent);font-weight:var(--weight-bold);">CUSTOMER ENGAGEMENT</span>
-          
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <div style="flex:1 1 100%;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Individual</div>
-          <div style="flex:1 1 100%;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Family</div>
-          <div style="flex:1 1 100%;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Friends</div>
-        </div>
-      </div>
-
-      <div style="grid-area:control;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;justify-content:center;">
-          <span style="font-size:clamp(7px,1.3cqi,10.5px);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent);font-weight:var(--weight-bold);">POLICY LAYER</span>
-          
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
-          <div style="flex:1 1 0;min-width:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Guardrails</div>
-          <div style="flex:1 1 0;min-width:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Billing</div>
-          <div style="flex:1 1 0;min-width:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">EU GDPR</div>
-        </div>
-      </div>
-
-      <div style="grid-area:hub;display:flex;justify-content:center;">
-        <div style="background:var(--color-accent-surface);border:1px solid var(--color-accent-border);border-radius:var(--radius-md);padding:clamp(6px,1.5cqi,16px) clamp(7px,2.1cqi,22px);box-shadow:var(--shadow-md);text-align:center;">
-          <div style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(10px,2.3cqi,18px);color:var(--color-accent);">Orchestration</div>
-        </div>
-      </div>
-
-      <div style="grid-area:data;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;justify-content:center;">
-          <span style="font-size:clamp(7px,1.3cqi,10.5px);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent);font-weight:var(--weight-bold);">CONTEXT LAYER</span>
-          
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
-          <div style="flex:1 1 0;min-width:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Memory</div>
-          <div style="flex:1 1 0;min-width:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Contents</div>
-          <div style="flex:1 1 0;min-width:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);text-align:center;">Services</div>
-        </div>
-      </div>
-
-      <div style="grid-area:models;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <span style="font-size:clamp(7px,1.3cqi,10.5px);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent);font-weight:var(--weight-bold);">AI OPTIMIZATION</span>
-          
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <div class="eg-hover-accent" style="flex:1 1 100%;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);transition:border-color 200ms;display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);">Frontier reasoning €€€</span></div>
-          <div class="eg-hover-accent" style="flex:1 1 100%;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);transition:border-color 200ms;display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);">General conversation €€</span></div>
-          <div class="eg-hover-accent" style="flex:1 1 100%;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:clamp(4px,1.25cqi,10px) clamp(5px,1.75cqi,14px);box-shadow:var(--shadow-sm);transition:border-color 200ms;display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-size:clamp(8px,1.75cqi,14px);color:var(--color-text);">Small &amp; on-device €</span></div>
-        </div>
-      </div>
-    </div></div>
-
-    <div style="background:var(--color-bg-sunken);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:30px 28px;margin-top:34px;">
-    <div class="eg-bullets">
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>UX wins on features. </b>Tone, pace and continuity, tailored contents, simple interface, etc.&nbsp;</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Orchestration is key.</b>&nbsp;Optimizes quality, costs, use best-of-breed tools, minimize provider lock-in and downtime.</p></div>
-      <div style="border-left:3px solid var(--color-accent);padding-left:16px;display:flex;align-items:flex-start;"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-text-secondary);"><b>Every conversation compounds.</b>&nbsp;The service gets more personal each day - and harder to replace.</p></div>
+    <div class="takeaways">
+      <div><p><b>UX wins on features.</b> Tone, pace and continuity, tailored contents, simple interface, etc.</p></div>
+      <div><p><b>Orchestration is key.</b> Optimizes quality, costs, use best-of-breed tools, minimize provider lock-in and downtime.</p></div>
+      <div><p><b>Every conversation compounds.</b> The service gets more personal each day – and harder to replace.</p></div>
     </div>
-    </div>
-    <p style="font-size:12px;line-height:1.5;color:var(--color-text-muted);margin:26px 0 0;max-width:900px;">Source:&nbsp;Cost index indicative, public API price lists (Sep 2026); EU AI Act (Reg. 2024/1689).</p>
+    <p class="src">Source: Cost index indicative, public API price lists (Sep 2026); EU AI Act (Reg. 2024/1689).</p>
   </div>
 </section>
 
-<section data-theme="dark" style="padding:61px clamp(20px,5vw,56px);background:var(--color-bg);border-top:1px solid var(--color-border-subtle);color:var(--color-text);">
-  <div style="max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:clamp(24px,3vw,34px);line-height:1.3;letter-spacing:-0.01em;max-width:760px;margin:0;color:var(--color-text);">Progress</h2>
-    <p style="font-size: 16px; line-height: 1.65; color: var(--color-text-secondary); max-width: 640px; margin: 0; position: relative">Investment thesis is stronger by the day, concept definition well advanced.<br>Current focus is on market validation, segmentation, distribution, go-to-market.<br>If you are interested in knowing more, please <a href="mailto:egiorgetti@egnt.ai">get in touch</a>.</p>
+<!-- progress -->
+<section class="band progress" id="progress">
+  <div class="wrap">
+    <h2>Progress</h2>
+    <p>Investment thesis is stronger by the day, concept definition well advanced.<br>Current focus is on market validation, segmentation, distribution, go-to-market.<br>If you are interested in knowing more, please <a href="mailto:egiorgetti@egnt.ai">get in touch</a>.</p>
   </div>
 </section>
 
-<section data-theme="mid" style="padding:49px clamp(20px,5vw,56px);background:var(--color-bg);color:var(--color-text);">
-  <div class="eg-about" style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr minmax(98px,154px);grid-template-areas:'name photo' 'body photo';column-gap:40px;align-items:start;">
-    <h2 style="grid-area:name;font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:28px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text);margin:0 0 16px;">Edoardo Giorgetti</h2>
-    <div style="grid-area:body;">
-      <p style="font-size:16px;margin:0 0 20px;"><a href="mailto:egiorgetti@egnt.ai">egiorgetti@egnt.ai</a></p>
-      <p style="font-size:16px;line-height:1.65;color:var(--color-text-secondary);max-width:640px;margin:0 0 18px;">Spent 30+ years building digital-first products — FinecoBank, ePRICE, Nexi YAP — and scaling them into businesses that served millions of customers and reached hundreds of millions in annual revenues. <a href="https://www.linkedin.com/in/egiorgetti" target="_blank" rel="noopener">More on LinkedIn</a></p>
-      <p style="font-size:16px;line-height:1.65;color:var(--color-text-secondary);max-width:640px;margin:0 0 8px;">Now working alongside founders building AI-first products, combining their vision, skills and speed with my experience, hands-on work and capital. <a href="mailto:egiorgetti@egnt.ai">Let's get in touch.</a></p>
-      <p style="font-size:16px;line-height:1.65;color:var(--color-text-secondary);margin-top:16px;">EGNT is my trademark, not yet a company.</p>
+<!-- about -->
+<section class="band" data-theme="mid" id="about">
+  <div class="wrap about">
+    <h2>Edoardo Giorgetti</h2>
+    <div class="body">
+      <p class="mail"><a href="mailto:egiorgetti@egnt.ai">egiorgetti@egnt.ai</a></p>
+      <p>Spent 30+ years building digital-first products — FinecoBank, ePRICE, Nexi YAP — and scaling them into businesses that served millions of customers and reached hundreds of millions in annual revenues. <a href="https://www.linkedin.com/in/egiorgetti" target="_blank" rel="noopener">More on LinkedIn</a></p>
+      <p>Now working alongside founders building AI-first products, combining their vision, skills and speed with my experience, hands-on work and capital. <a href="mailto:egiorgetti@egnt.ai">Let's get in touch.</a></p>
+      <p>EGNT is my trademark, not yet a company.</p>
     </div>
-    <div style="grid-area:photo;">
-      <a href="https://www.linkedin.com/in/egiorgetti" target="_blank" rel="noopener"><img src="img/egnt_eg.png" alt="Edoardo Giorgetti" style="width:100%;border-radius:var(--radius-md);display:block;"></a>
-    </div>
+    <div class="photo"><a href="https://www.linkedin.com/in/egiorgetti" target="_blank" rel="noopener"><img src="img/egnt_eg.png" alt="Edoardo Giorgetti"></a></div>
   </div>
 </section>
+
 </body>
 </html>
