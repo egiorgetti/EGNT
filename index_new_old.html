@@ -214,25 +214,33 @@ b{font-weight:700}
 .s4-cards .d{font-size:clamp(11.5px,1.7vw,13.5px);line-height:1.45;color:var(--text-2);margin-top:6px}
 @media (max-width:600px){.capex .foot{display:none}}
 
-/* ---------- 05 value stack ---------- */
-.stack{display:grid;grid-template-columns:minmax(0,1fr) 34px;grid-template-rows:auto auto auto;column-gap:14px;row-gap:10px;max-width:860px;margin:0 auto}
-.layer{grid-column:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px 24px;align-items:center;border-radius:var(--radius);padding:clamp(14px,2vw,20px) clamp(16px,2.6vw,24px);border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow-sm)}
-.layer.l1{background:var(--accent-surface);border-color:var(--accent-border)}
-.layer.l2{border-left:3px solid var(--accent)}
-.layer.l3{background:var(--bg-sunken);border-style:dashed;box-shadow:none}
-.layer .ln{font-weight:700;font-size:clamp(17px,2vw,20px);line-height:1.2}
-.layer.l1 .ln{color:var(--accent)}
-.layer .ld{font-size:clamp(13px,1.3vw,14px);color:var(--text-2);margin-top:3px}
-.layer .lf{display:flex;flex-direction:column;gap:2px}
-.layer .lf b{font-size:clamp(15px,1.7vw,18px);line-height:1.25;font-feature-settings:'tnum' 1}
-.layer .lf span{font-size:clamp(12.5px,1.3vw,14px);color:var(--text-muted)}
-.layer.l3 .ln,.layer.l3 .lf b{color:var(--text-2)}
-.bracket{grid-column:2;grid-row:1/3;position:relative;border:1.5px solid var(--accent);border-left:none;border-radius:0 6px 6px 0;margin:6px 0;width:12px;justify-self:start}
-.bracket span{position:absolute;left:18px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent)}
-@media (max-width:600px){
-  .stack{grid-template-columns:minmax(0,1fr) 26px;column-gap:8px}
-  .layer{grid-template-columns:1fr;gap:8px;padding:12px 14px}
-  .bracket span{left:14px;font-size:10px}
+/* ---------- 05 moats ---------- */
+.s5{position:relative;max-width:940px;margin:0 auto;overflow:hidden;padding:8px 0}
+.s5-rays,.s5-glow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;aspect-ratio:1}
+.s5-rays{height:150%;background:repeating-conic-gradient(from 4deg at 50% 50%,var(--accent) 0deg 1.1deg,transparent 1.1deg 13deg);-webkit-mask-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 28%,rgba(0,0,0,.12) 52%,transparent 70%);mask-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 28%,rgba(0,0,0,.12) 52%,transparent 70%);opacity:.22}
+.s5-glow{height:80%;background:radial-gradient(circle,color-mix(in oklab,var(--accent) 22%,transparent) 0%,transparent 68%)}
+.s5-grid{position:relative;z-index:1;display:grid;gap:clamp(10px,1.5vw,14px);grid-template-areas:"control control control" "people hub models" "data data data";grid-template-columns:1fr 1.1fr 1fr;align-items:center}
+.lay{display:flex;flex-direction:column;gap:8px}
+.lay .k{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.lay.c .k{text-align:center}
+.chips{display:flex;gap:8px}
+.chips.col{flex-direction:column}
+.chip{flex:1 1 0;min-width:0;overflow-wrap:anywhere;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(7px,1vw,10px) clamp(8px,1.2vw,14px);box-shadow:var(--shadow-sm);font-size:clamp(12px,1.4vw,14px);text-align:center;transition:border-color .2s}
+.chip:hover{border-color:var(--accent)}
+.hubbox{grid-area:hub;display:flex;justify-content:center}
+.hubbox div{background:var(--accent-surface);border:1px solid var(--accent-border);border-radius:var(--radius);padding:clamp(10px,1.5vw,16px) clamp(14px,2vw,22px);box-shadow:var(--shadow-md);font-weight:700;font-size:clamp(14px,1.8vw,18px);color:var(--accent)}
+@media (max-width:640px){
+  .s5-grid{gap:8px;grid-template-columns:1fr auto 1fr}
+  .lay{gap:6px}
+  .lay .k{font-size:9.5px;letter-spacing:.05em;text-align:center;line-height:1.2}
+  .chips{gap:6px}
+  .chip{font-size:11.5px;padding:7px 5px;line-height:1.25;border-radius:3px}
+  .hubbox div{font-size:12.5px;padding:10px 8px;letter-spacing:-0.01em}
+  .s5-rays{height:120%}
+}
+@media (max-width:380px){
+  .chip{font-size:11px;padding:6px 3px}
+  .hubbox div{font-size:12px;padding:8px 6px}
 }
 
 /* ---------- progress + about ---------- */
@@ -274,7 +282,7 @@ b{font-weight:700}
 <section class="band" data-theme="light" id="s1">
   <div class="wrap">
     <div class="kicker"><span class="num">01</span><span class="rule"></span><span class="lbl">Europe 65+ at a glance</span></div>
-    <h2 class="h2">81 million Europeans are over 65, 96 million by 2036.</h2>
+    <h2 class="h2">81 million Europeans are over 65, 96 million by 2036. Massive, growing, inevitable.</h2>
 
     <div class="s1-fig">
       <img class="s1-map" src="img/europe-map.png" alt="" aria-hidden="true">
@@ -453,7 +461,7 @@ b{font-weight:700}
       </div>
       <div class="s4-cards">
         <div class="acc"><div class="n">$1,300bn</div><div class="d">invested in 3 years by 5 companies alone</div></div>
-        <div><div class="n">−99%</div><div class="d">cost per task in 2 years, at constant quality</div></div>
+        <div><div class="n">$581bn</div><div class="d">global corporate AI investment 2025, 2.3x vs. previous year, accelerating</div></div>
       </div>
     </div>
 
@@ -462,7 +470,7 @@ b{font-weight:700}
       <div><p><b>Unit economics constantly improve.</b> A heavy user costs ~€2/month, leaving room for fair pricing at healthy margins.</p></div>
       <div><p><b>Owning the user is key.</b> Models converge; relationship, data and margins compound.</p></div>
     </div>
-    <p class="src">Source: company guidance (Futurum compilation, 2026E $660–690bn); Stanford AI Index 2025 (inference cost, GPT-3.5-level output, Nov 2022 – Oct 2024); Epoch AI. 2024 figure from company reports, approximate.</p>
+    <p class="src">Source: company guidance (Futurum compilation, 2026E $660–690bn); Stanford AI Index 2025/2026; Epoch AI. 2024 figure from company reports, approximate.</p>
   </div>
 </section>
 
@@ -472,28 +480,23 @@ b{font-weight:700}
     <div class="kicker"><span class="num">05</span><span class="rule"></span><span class="lbl">Compounding moats</span></div>
     <h2 class="h2">Engagement, orchestration, memory and EU compliance compound into long-term value.</h2>
 
-    <div class="stack">
-      <div class="layer l1">
-        <div class="lt"><div class="ln">Relationship</div><div class="ld">memory, tone, pace, consent</div></div>
-        <div class="lf"><b>Grows with every conversation</b><span>context no competitor has</span></div>
+    <div class="s5">
+      <div class="s5-rays" aria-hidden="true"></div><div class="s5-glow" aria-hidden="true"></div>
+      <div class="s5-grid">
+        <div class="lay c" style="grid-area:control"><div class="k">Policy layer</div><div class="chips"><div class="chip">Guardrails</div><div class="chip">Billing</div><div class="chip">EU GDPR</div></div></div>
+        <div class="lay" style="grid-area:people"><div class="k">Engagement</div><div class="chips col"><div class="chip">Individual</div><div class="chip">Family</div><div class="chip">Friends</div></div></div>
+        <div class="hubbox"><div>Orchestration</div></div>
+        <div class="lay" style="grid-area:models"><div class="k">AI optimization</div><div class="chips col"><div class="chip">Frontier reasoning</div><div class="chip">General conversation</div><div class="chip">Small &amp; on-device</div></div></div>
+        <div class="lay c" style="grid-area:data"><div class="k">Context layer</div><div class="chips"><div class="chip">Memory</div><div class="chip">Contents</div><div class="chip">Services</div></div></div>
       </div>
-      <div class="layer l2">
-        <div class="lt"><div class="ln">Orchestration</div><div class="ld">right model per task, EU rules built in</div></div>
-        <div class="lf"><b>Cost index 100 / 10 / 1</b><span>frontier / general / on-device</span></div>
-      </div>
-      <div class="layer l3">
-        <div class="lt"><div class="ln">Models</div><div class="ld">interchangeable suppliers</div></div>
-        <div class="lf"><b>−99% price per task in 2 years</b><span>every upgrade available on day one</span></div>
-      </div>
-      <div class="bracket" aria-hidden="true"><span>Value accrues here</span></div>
     </div>
 
     <div class="takeaways">
-      <div><p><b>Models are a commodity.</b> Price per task −99% in 2 years; suppliers compete for the app layer.</p></div>
-      <div><p><b>Orchestration sets the margin.</b> Cost index 100 / 10 / 1 by tier keeps a heavy user at ~€2/month.</p></div>
-      <div><p><b>Memory compounds.</b> Each conversation adds context the next provider does not have; consent under GDPR and the AI Act sits inside the product.</p></div>
+      <div><p><b>UX wins on features.</b> Tone, pace and continuity, tailored contents, simple interface, etc.</p></div>
+      <div><p><b>Orchestration is key.</b> Optimizes quality, costs, use best-of-breed tools, minimize provider lock-in and downtime.</p></div>
+      <div><p><b>Every conversation compounds.</b> The service gets more personal each day – and harder to replace.</p></div>
     </div>
-    <p class="src">Source: public API price lists (Sep 2026), cost index indicative; Stanford AI Index 2025 (inference cost); GDPR; EU AI Act (Reg. 2024/1689).</p>
+    <p class="src">Source: Cost index indicative, public API price lists (Sep 2026); EU AI Act (Reg. 2024/1689).</p>
   </div>
 </section>
 
@@ -501,8 +504,7 @@ b{font-weight:700}
 <section class="band progress" id="progress">
   <div class="wrap">
     <h2>Progress</h2>
-    <p>Concept defined.<br>The work now is market validation, segmentation, distribution and go-to-market.</p>
-    <p>Happy to compare notes with founders and builders in consumer AI, operators who already serve the over-65s, and investors who follow the space. <a href="mailto:egiorgetti@egnt.ai">Write to me</a></p>
+    <p>Investment thesis is stronger by the day, concept definition well advanced.<br>Current focus is on market validation, segmentation, distribution, go-to-market.<br>Interested in knowing more? <a href="mailto:egiorgetti@egnt.ai">Get in touch.</a></p>
   </div>
 </section>
 
@@ -518,8 +520,7 @@ b{font-weight:700}
   </div>
   <div class="body">
     <p>Spent 30+ years building digital-first products — FinecoBank, ePRICE, Nexi YAP — and scaling them into businesses that served millions of customers and reached hundreds of millions in annual revenues. <a href="https://www.linkedin.com/in/egiorgetti" target="_blank" rel="noopener">More on LinkedIn</a></p>
-    <p>Each of them brought a bank, a store or a payment card to customers who had never used one online. The over-65s are the same adoption problem.</p>
-    <p>Now working alongside founders building AI-native products, combining their vision, skills and speed with my experience, hands-on work and capital. <a href="mailto:egiorgetti@egnt.ai">Write to me</a></p>
+    <p>Now working alongside founders building AI-native products, combining their vision, skills and speed with my experience, hands-on work and capital. <a href="mailto:egiorgetti@egnt.ai">Let's get in touch.</a></p>
     <p>EGNT is my trademark, not yet a company.</p>
   </div>
 </div>
