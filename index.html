@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.className+=' js';</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EGNT | Builds &amp; backs AI-native products — Edoardo Giorgetti</title>
@@ -23,13 +24,13 @@
 <meta name="author" content="Edoardo Giorgetti">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="preload" href="fonts/GoogleSansFlex-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="preload" href="fonts/PlusJakartaSans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <style>
 /* ---------- fonts (self-hosted) ---------- */
-@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/GoogleSansFlex-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215;}
-@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/GoogleSansFlex-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20AB,U+2113;}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/PlusJakartaSans-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/PlusJakartaSans-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 
 /* ---------- tokens ---------- */
 :root{
@@ -42,7 +43,7 @@
 --surface:var(--n800);--line:var(--n600);--fill-muted:var(--a900);
 --accent-surface:var(--a900);--accent-border:var(--a700);
 --mark-bg:var(--bg-sunken);--mark-text:var(--text);
---font:'Google Sans Flex',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+--font:'Plus Jakarta Sans','Google Sans Flex',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 --radius:4px;--shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 4px 16px rgba(0,0,0,.5);
 --pad-x:clamp(20px,5vw,56px);--wrap:860px;
 }
@@ -157,7 +158,7 @@ b{font-weight:700}
 .pillar .circle img.wide{width:84%}
 .pillar .bannerwrap{position:relative;width:100%;margin-top:-7%;z-index:2}
 .pillar .banner{background:#0B0F19;color:#E7E7E4;text-align:center;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(12px,1.9vw,20px);padding:clamp(8px,1.3vw,14px) 0;clip-path:polygon(clamp(10px,1.8vw,22px) 0,calc(100% - clamp(10px,1.8vw,22px)) 0,100% 50%,calc(100% - clamp(10px,1.8vw,22px)) 100%,clamp(10px,1.8vw,22px) 100%,0 50%)}
-.pillar .dash{position:absolute;top:50%;right:calc(-1 * var(--gap));width:var(--gap);height:1.5px;background:var(--text-muted)}
+.pillar .dash{position:absolute;top:50%;right:calc(-1 * var(--gap));width:var(--gap);height:1.5px;background:var(--accent)}
 .pillar .kpi2{width:100%;flex:1 1 auto;margin-top:clamp(12px,2vw,26px);background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(12px,1.8vw,20px) 10px;text-align:center}
 .pillar .kpi2.acc{background:var(--accent-surface);border-color:var(--accent-border)}
 .pillar .kpi2 .n{font-weight:700;font-size:clamp(17px,2.4vw,26px);line-height:1.1;letter-spacing:-0.01em}
@@ -260,9 +261,182 @@ b{font-weight:700}
 .about-head .photo img{width:100%;display:block;border-radius:var(--radius)}
 .about .body{display:flex;flex-direction:column;gap:16px}
 .about .body p{font-size:16px;line-height:1.65;color:var(--text-2);max-width:700px}
+/* ================= BOOST LAYER ================= */
+/* 1. fluid background ------------------------------------------------ */
+html{background:var(--n900)}
+body{background:transparent}
+.hdr,.hero{background:transparent}
+
+.fluid{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;
+  background:radial-gradient(130% 95% at 50% -10%,#0F1122 0%,#0A0D17 48%,#07090F 100%)}
+.fluid span{position:absolute;display:block;border-radius:50%;filter:blur(26px);transform:translateZ(0)}
+.fluid .x1{width:56vw;height:56vw;left:-14vw;top:-12vw;opacity:.30;
+  background:radial-gradient(circle at 35% 35%,#3A3CA0,rgba(58,60,160,0) 70%);animation:flA 54s ease-in-out infinite}
+.fluid .x2{width:48vw;height:48vw;right:-12vw;top:4vh;opacity:.26;
+  background:radial-gradient(circle at 60% 40%,#4C4FCE,rgba(76,79,206,0) 70%);animation:flB 66s ease-in-out infinite}
+.fluid .x3{width:64vw;height:64vw;left:16vw;bottom:-26vw;opacity:.32;
+  background:radial-gradient(circle at 50% 50%,#1B1D52,rgba(27,29,82,0) 70%);animation:flC 76s ease-in-out infinite}
+.fluid .x4{width:34vw;height:34vw;right:12vw;bottom:6vh;opacity:.16;
+  background:radial-gradient(circle at 50% 50%,#4C4FCE,rgba(76,79,206,0) 70%);animation:flD 60s ease-in-out infinite}
+.fluid .mesh{display:none;position:absolute;inset:-25%;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 96px),
+             repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 96px);
+  -webkit-mask-image:radial-gradient(70% 55% at 50% 25%,#000,transparent 78%);
+          mask-image:radial-gradient(70% 55% at 50% 25%,#000,transparent 78%);
+  animation:meshDrift 70s linear infinite}
+@keyframes flA{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(13vw,7vh,0) scale(1.16)}66%{transform:translate3d(3vw,17vh,0) scale(.9)}}
+@keyframes flB{0%,100%{transform:translate3d(0,0,0) scale(1)}30%{transform:translate3d(-11vw,12vh,0) scale(.88)}65%{transform:translate3d(-4vw,-6vh,0) scale(1.2)}}
+@keyframes flC{0%,100%{transform:translate3d(0,0,0) scale(1)}40%{transform:translate3d(-14vw,-9vh,0) scale(1.12)}75%{transform:translate3d(9vw,-4vh,0) scale(.94)}}
+@keyframes flD{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-9vw,-14vh,0) scale(1.25)}}
+@keyframes meshDrift{to{transform:translate3d(96px,96px,0)}}
+@media (min-width:900px){.fluid .mesh{display:block}}
+
+/* faint drift inside the light bands too */
+.band{position:relative;overflow:hidden}
+.band>.wrap{position:relative;z-index:1}
+.band[data-theme="light"]::before{content:"";position:absolute;inset:-30%;z-index:0;pointer-events:none;opacity:.55;
+  background:radial-gradient(38% 42% at 22% 18%,rgba(99,102,241,.16),transparent 70%),
+             radial-gradient(32% 38% at 82% 78%,rgba(76,79,206,.13),transparent 70%);
+  }
+@media (min-width:900px){.band[data-theme="light"]::before{animation:softDrift 40s ease-in-out infinite}}
+@keyframes softDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4%,-3%,0) scale(1.1)}}
+
+/* scroll progress */
+.sprog{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:0 50%;z-index:99;
+  background:linear-gradient(90deg,var(--a300),var(--a500) 55%,var(--a400))}
+
+/* 2. typography tuning (Revolut-style geometric grotesque) ----------- */
+h1,h2,h3{font-weight:800}
+.hero h1{font-weight:800;letter-spacing:-0.03em}
+.h2,.progress h2{font-weight:800;letter-spacing:-0.025em}
+.about-id h2{font-weight:800;letter-spacing:.06em}
+.kpi .n b,.bars .v,.s4-cards .n,.pillar .kpi2 .n,.chart .lab,.chart .pill span{letter-spacing:-0.02em}
+.banner{letter-spacing:.08em}
+.kicker .lbl,.caption,.kpi .k{letter-spacing:.12em}
+
+/* 3. reveal engine --------------------------------------------------- */
+.js .rv{opacity:0;transform:translateY(20px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1) var(--d,0ms),transform .75s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .rv.froml{transform:translateX(-26px)}
+.js .rv.fromr{transform:translateX(26px)}
+.js .rv.in{opacity:1;transform:none}
+
+/* 01 — bars, axis, pills */
+.js .chart-body::before{transform:scaleY(0);transform-origin:top;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.js .chart-body.in::before{transform:scaleY(1)}
+.js .chart-body .bar .b1,.js .chart-body .bar .b2{width:0;transition:width 1.05s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .chart-body .bar .v2{left:0;opacity:0;transition:left 1.05s cubic-bezier(.22,1,.36,1) var(--d,0ms),opacity .5s ease var(--d,0ms)}
+.js .chart-body.in .bar .b1{width:var(--w1)}
+.js .chart-body.in .bar .b2{width:var(--w2)}
+.js .chart-body.in .bar .v2{left:var(--w2);opacity:1}
+
+/* 01 — KPI tiles */
+.js .kpis .kpi.rv{transform:translateY(14px) scale(.97)}
+.js .kpis .kpi.rv.in{transform:none}
+.kpi svg{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+@media (hover:hover){.kpi:hover svg{transform:scale(1.15) rotate(-4deg)}}
+
+/* 02 — pillars */
+.js .pillar .circle{opacity:0;transform:scale(.78);
+  transition:opacity .6s ease var(--d,0ms),transform .7s cubic-bezier(.34,1.56,.64,1) var(--d,0ms)}
+.js .pillar.in .circle{opacity:1;transform:none}
+.js .pillar .bannerwrap,.js .pillar .kpi2{opacity:0;transform:translateY(14px);
+  transition:opacity .6s ease calc(var(--d,0ms) + 160ms),transform .6s cubic-bezier(.22,1,.36,1) calc(var(--d,0ms) + 160ms)}
+.js .pillar.in .bannerwrap,.js .pillar.in .kpi2{opacity:1;transform:none}
+.js .pillar.in .circle img{animation:bob 7s ease-in-out infinite}
+.js .pillar.in .circle::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:1.5px solid var(--accent);
+  animation:ring 2.4s ease-out infinite;animation-delay:var(--d,0ms);pointer-events:none}
+.js .pillar .dash{transform-origin:left center;transform:scaleX(0);transition:transform .6s ease calc(var(--d,0ms) + 320ms)}
+.js .pillar.in .dash{transform:scaleX(1)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes ring{0%{transform:scale(1);opacity:.45}100%{transform:scale(1.17);opacity:0}}
+
+/* 03 — diagram */
+.js .s3-diag circle,.js .s3-diag-m circle{transform-box:fill-box;transform-origin:center}
+.js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle{opacity:0;transform:scale(.4);
+  transition:opacity .55s ease var(--d,0ms),transform .6s cubic-bezier(.34,1.56,.64,1) var(--d,0ms)}
+.js .s3-diag.in .nodes circle,.js .s3-diag-m.in .nodes circle{opacity:1;transform:none}
+.js .s3-diag .hubc,.js .s3-diag-m .hubc{opacity:0;transform:scale(.5);transition:opacity .6s ease,transform .7s cubic-bezier(.34,1.56,.64,1)}
+.js .s3-diag.in .hubc,.js .s3-diag-m.in .hubc{opacity:1;transform:none}
+.js .s3-diag .edges line,.js .s3-diag-m .edges line{marker-end:none;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
+  transition:stroke-dashoffset .7s ease var(--d,0ms)}
+.js .s3-diag.in .edges line,.js .s3-diag-m.in .edges line{stroke-dashoffset:0}
+.js .s3-diag.drawn .edges line,.js .s3-diag-m.drawn .edges line{marker-end:url(#egArrow)}
+.js .s3-diag-m.drawn .edges line{marker-end:url(#egArrowM)}
+.js .s3-diag .node{opacity:0;transform:translate(-50%,-50%) scale(.8);
+  transition:opacity .55s ease var(--d,0ms),transform .6s cubic-bezier(.34,1.56,.64,1) var(--d,0ms)}
+.js .s3-diag.in .node{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.js .s3-diag-m .lbl,.js .s3-diag-m .icons{opacity:0;transition:opacity .7s ease .35s}
+.js .s3-diag-m.in .lbl,.js .s3-diag-m.in .icons{opacity:1}
+.pulse{fill:none;transform-box:fill-box;transform-origin:center;opacity:0}
+.s3-diag.in .pulse,.s3-diag-m.in .pulse{animation:hubPulse 2.4s ease-out .5s infinite}
+@keyframes hubPulse{0%{transform:scale(1);opacity:.45}100%{transform:scale(1.42);opacity:0}}
+
+/* 04 — capex columns */
+.js .bars .col i{height:0;transition:height .95s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .bars.in .col i{height:var(--h)}
+.js .bars .v,.js .bars .y{opacity:0;transition:opacity .5s ease calc(var(--d,0ms) + 250ms)}
+.js .bars.in .v,.js .bars.in .y{opacity:1}
+
+/* 05 — value stack */
+.js .bracket{opacity:0;transform:scaleY(.4);transform-origin:center;
+  transition:opacity .5s ease var(--d,0ms),transform .6s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+.js .bracket.in{opacity:1;transform:none}
+@media (hover:hover){
+  .layer{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .layer.rv{transition:opacity .75s cubic-bezier(.22,1,.36,1) var(--d,0ms),transform .75s cubic-bezier(.22,1,.36,1) var(--d,0ms)}
+  .layer.rv.in:hover{transform:translateX(6px)}
+  .s4-cards>div.rv.in:hover,.pillar .kpi2:hover{transform:translateY(-4px)}
+  .kpis .kpi.rv.in:hover{transform:translateY(-4px)}
+}
+
+/* kicker rule draw */
+/* 05 — the LAYER/MOAT header row is hidden under 600px, so label the moat inline */
+.layer .lf i{display:none}
+@media (max-width:600px){
+  .layer .lf i{display:block;margin-bottom:3px}
+  .layer .lf{padding-top:8px;margin-top:2px}
+  .layer>svg{align-self:start;margin-top:2px}
+}
+
+.js .kicker .rule{width:0;transition:width .6s cubic-bezier(.22,1,.36,1) .15s}
+.js .kicker.in .rule{width:24px}
+
+/* header + link underline motion */
+.hdr img{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover){.hdr a:hover img{transform:translateY(-2px)}}
+a{transition:color .25s ease}
+
+/* 4. reduced motion -------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  .fluid span,.fluid .mesh,.band[data-theme="light"]::before{animation:none}
+  .js .rv,.js .rv.in{opacity:1!important;transform:none!important;transition:none!important}
+  .js .chart-body .bar .b1{width:var(--w1)!important}
+  .js .chart-body .bar .b2{width:var(--w2)!important}
+  .js .chart-body .bar .v2{left:var(--w2)!important;opacity:1!important}
+  .js .chart-body::before{transform:none!important}
+  .js .bars .col i{height:var(--h)!important}
+  .js .bars .v,.js .bars .y{opacity:1!important}
+  .js .pillar .circle,.js .pillar .bannerwrap,.js .pillar .kpi2,.js .pillar .dash{opacity:1!important;transform:none!important}
+  .js .pillar.in .circle img{animation:none}
+  .js .pillar.in .circle::after{display:none}
+  .js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle,.js .s3-diag .hubc,.js .s3-diag-m .hubc,
+  .js .s3-diag-m .lbl,.js .s3-diag-m .icons{opacity:1!important;transform:none!important}
+  .js .s3-diag .nodes circle,.js .s3-diag-m .nodes circle,.js .s3-diag .hubc,.js .s3-diag-m .hubc{transform:none!important}
+  .js .s3-diag .node{opacity:1!important;transform:translate(-50%,-50%)!important}
+  .js .s3-diag .edges line,.js .s3-diag-m .edges line{stroke-dashoffset:0!important;marker-end:url(#egArrow)}
+  .js .s3-diag-m .edges line{marker-end:url(#egArrowM)}
+  .pulse{display:none}
+  .js .kicker .rule{width:24px!important}
+  .sprog{display:none}
+  *{scroll-behavior:auto!important}
+}
+
 </style>
 </head>
 <body>
+
+<div class="fluid" aria-hidden="true"><span class="x1"></span><span class="x2"></span><span class="x3"></span><span class="x4"></span><div class="mesh"></div></div>
 
 <header class="hdr">
   <div class="wrap"><a href="/" aria-label="EGNT home"><img src="img/egnt_logo.png" alt="EGNT"></a></div>
@@ -333,7 +507,7 @@ b{font-weight:700}
     <div class="takeaways">
       <div><p><b>40m in Italy, France &amp; Spain</b>: ~50% of the euro-area total. By 2035, Italians +65 will be 30% of total population.</p></div>
       <div><p><b>36m (45% of total) are active.</b> Travel, attend cultural events, read and socialise regularly. Half take at least one leisure trip a year.</p></div>
-      <div><p><b>Governments pay the bill.</b> Age-related spending is 27% of GDP in Italy, 30% in France. Long-Term Care spending +48% by 2070.</p></div>
+      <div><p><b>Governments pay the bill.</b> Age-related public spending is 27% of GDP in Italy, 30% in France; peaks in 2045 as 1960s cohorts turn 80.</p></div>
     </div>
     <p class="src">Source: Eurostat demo_pjangroup 2025 &amp; EUROPOP2023 (euro area, EA-21); Eurostat isoc_ci_ifp_iu, isoc_sk_dskl_i21 (2025, 65–74, euro area); EU-SILC; ECB HFCS; EC Ageing Report 2024. Connected = last 3 months; digital skills = at least basic. 2036 connected and skills = today's 55–64 cohort (calc).</p>
   </div>
@@ -364,9 +538,9 @@ b{font-weight:700}
     </div>
 
     <div class="takeaways">
-      <div><p><b>Dementia alone costs €185bn yearly</b>. A 2-year delay in onset saves ≈ €55bn / year by 2050.</p></div>
-      <div><p><b>Families can save money.</b> 58% of dementia cost, &gt;€100bn, is not covered by public budget.</p></div>
-      <div><p><b>Curiosity strong when UX is easy.</b> 91% users ready to try, 79% early adopters.</p></div>
+      <div><p><b>Decline starts early.</b> Europeans live to 85 but stay healthy only to 74. The 11 dependent years carry the €1.3tn health and care bill.</p></div>
+      <div><p><b>Onset can be delayed.</b> 45% of dementia cases trace to modifiable factors. A 2-year delay saves ≈€55bn a year by 2050.</p></div>
+      <div><p><b>Families absorb the gap.</b> 58% of the dementia bill, over €100bn a year, falls on households as unpaid care by children aged 45-65.</p></div>
     </div>
     <p class="src">Source: EC Ageing Report 2024; Alzheimer Europe / OHE; Lancet Commission 2024; Kuiper 2015; Alzheimer's Association 2025; Eurostat EU-SILC. "Europe" = euro area (EA-21): EU-27 rates applied to EA-21 population and GDP (calc).</p>
   </div>
@@ -470,8 +644,8 @@ b{font-weight:700}
     </div>
 
     <div class="takeaways">
-      <div><p><b>Model quality keeps improving.</b> Suppliers compete, every upgrade is available on day one.</p></div>
-      <div><p><b>Unit economics improve every year.</b> A heavy user costs ~€2/month today, trending down.</p></div>
+      <div><p><b>Model quality keeps improving.</b> Suppliers compete, and every upgrade is available on day one.</p></div>
+      <div><p><b>Unit economics work.</b> A heavy user costs ~€2/month today, trending down.</p></div>
       <div><p><b>Access is open.</b> Frontier models are available by API to any team; open models run on-device.</p></div>
     </div>
     <p class="src">Source: company guidance (Futurum compilation, 2026E $660–690bn); Stanford AI Index 2025 (inference cost, GPT-3.5-level output, Nov 2022 – Oct 2024); Epoch AI. 2024 figure from company reports, approximate.</p>
@@ -489,17 +663,17 @@ b{font-weight:700}
       <div class="layer l1">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
         <div class="lt"><div class="ln">Relationship</div><div class="ld">Memory, tone, pace, consent</div></div>
-        <div class="lf"><b>Compounding context data</b><span>Each conversation adds memory; switching cost grows with time, for the user and for consented partners.</span></div>
+        <div class="lf"><i>Moat</i><b>Compounding context data</b><span>Each conversation adds memory; switching cost grows with time, for the user and for consented partners.</span></div>
       </div>
       <div class="layer l2">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><circle cx="18" cy="5" r="2.5"/><circle cx="12" cy="19" r="2.5"/><path d="M6 7.5v2a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-2M12 12.5v4"/></svg>
         <div class="lt"><div class="ln">Orchestration</div><div class="ld">Best model per task, EU rules built in</div></div>
-        <div class="lf"><b>Best quality at the lowest cost</b><span>Tasks routed to frontier, general or on-device models (cost index 100 / 10 / 1); consent and EU data residency built in.</span></div>
+        <div class="lf"><i>Moat</i><b>Best quality at the lowest cost</b><span>Tasks routed to frontier, general or on-device models (cost index 100 / 10 / 1); consent and EU data residency built in.</span></div>
       </div>
       <div class="layer l3">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
         <div class="lt"><div class="ln">Models</div><div class="ld">Interchangeable suppliers</div></div>
-        <div class="lf"><b>Healthy margins</b><span>Suppliers compete for the app layer. Model cost is a minor share of the price a user pays, and the margin widens over time.</span></div>
+        <div class="lf"><i>Moat</i><b>Healthy margins</b><span>Suppliers compete for the app layer. Model cost is a minor share of the price a user pays, and the margin widens over time.</span></div>
       </div>
       <div class="bracket" aria-hidden="true"><span>Value accrues here</span></div>
     </div></div>
@@ -517,7 +691,7 @@ b{font-weight:700}
 <section class="band progress" id="progress">
   <div class="wrap">
     <h2>Progress</h2>
-    <p>Concept defined.<br>The work now is market validation, segmentation, distribution and go-to-market.</p>
+    <p>Concept defined. CEO identified. Team taking shape.<br>The work now: which cohort first, what makes it resist, which channel reaches it, and what to build to know.</p>
     <p>Happy to compare notes with founders and builders in consumer AI, operators who already serve the over-65s, and investors who follow the space. <a href="mailto:egiorgetti@egnt.ai">Write to me</a></p>
   </div>
 </section>
@@ -540,6 +714,183 @@ b{font-weight:700}
   </div>
 </div>
 </section>
+
+<script>
+(function(){
+  var D=document,W=window;
+  var RM=W.matchMedia&&W.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function Q(s,r){return Array.prototype.slice.call((r||D).querySelectorAll(s));}
+  function C(el){return Array.prototype.slice.call(el.children);}
+  function d(el,ms){el.style.setProperty('--d',ms+'ms');}
+  function cd(el,ms){el.setAttribute('data-cd',ms);}
+
+  /* ---------- scroll progress ---------- */
+  var sp=D.createElement('div');sp.className='sprog';sp.setAttribute('aria-hidden','true');D.body.appendChild(sp);
+  var ticking=false;
+  function prog(){
+    if(ticking)return;ticking=true;
+    W.requestAnimationFrame(function(){
+      var h=D.documentElement.scrollHeight-W.innerHeight;
+      sp.style.transform='scaleX('+(h>0?Math.min(1,W.pageYOffset/h):0)+')';ticking=false;
+    });
+  }
+  W.addEventListener('scroll',prog,{passive:true});W.addEventListener('resize',prog,{passive:true});prog();
+
+  /* ---------- tag: hero + furniture ---------- */
+  Q('.hero h1,.hero li,.hero .lead').forEach(function(el,i){el.classList.add('rv');d(el,80+i*80);});
+  Q('.hdr img').forEach(function(el){el.classList.add('rv');});
+  Q('.kicker').forEach(function(el){el.classList.add('rv');});
+  Q('.h2,.src,.caption,.chart-head,.shead,.progress h2,.progress p,.about-head,.about .body p').forEach(function(el){el.classList.add('rv');});
+  Q('.takeaways').forEach(function(t){C(t).forEach(function(c,i){c.classList.add('rv');d(c,i*120);});});
+
+  /* ---------- 01 chart ---------- */
+  var cb=D.querySelector('.chart-body');
+  if(cb){
+    cb.classList.add('grp');
+    Q('.bar',cb).forEach(function(b,i){
+      d(b,i*120);
+      var b1=b.querySelector('.b1'),v2=b.querySelector('.v2');
+      if(b1){b1.classList.add('cnt');cd(b1,i*120+120);}
+      if(v2){v2.classList.add('cnt');cd(v2,i*120+220);}
+    });
+    Q('.lab',cb).forEach(function(l,i){l.classList.add('rv');d(l,i*120);});
+    Q('.pill',cb).forEach(function(p,i){
+      p.classList.add('rv');d(p,300+i*120);
+      var s=p.querySelector('span');
+      if(s){s.classList.add('cnt');cd(s,i*120+420);}
+    });
+  }
+  Q('.kpis .kpi').forEach(function(k,i){
+    k.classList.add('rv');d(k,i*80);
+    Q('.n b',k).forEach(function(b,j){b.classList.add('cnt');cd(b,i*80+180+j*160);});
+  });
+
+  /* ---------- 02 pillars ---------- */
+  Q('.pillar').forEach(function(p,i){
+    p.classList.add('grp');d(p,i*150);
+    var n=p.querySelector('.kpi2 .n');
+    if(n){n.classList.add('cnt');cd(n,i*150+300);}
+  });
+
+  /* ---------- 03 diagrams ---------- */
+  Q('.s3-diag,.s3-diag-m').forEach(function(dg){
+    dg.classList.add('grp');
+    var svg=dg.querySelector('svg');if(!svg)return;
+    Array.prototype.forEach.call(svg.querySelectorAll('g'),function(g){
+      if(g.querySelector('line'))g.classList.add('edges');
+      else if(g.getAttribute('fill')==='var(--surface)')g.classList.add('nodes');
+      else if(g.getAttribute('stroke')==='var(--accent)')g.classList.add('icons');
+    });
+    var ed=svg.querySelector('g.edges');
+    if(ed){
+      Array.prototype.forEach.call(ed.querySelectorAll('line'),function(ln,i){
+        var L=Math.sqrt(Math.pow(ln.x2.baseVal.value-ln.x1.baseVal.value,2)+Math.pow(ln.y2.baseVal.value-ln.y1.baseVal.value,2));
+        ln.style.setProperty('--len',Math.ceil(L));d(ln,350+i*90);
+      });
+    }
+    var nd=svg.querySelector('g.nodes');
+    if(nd){Array.prototype.forEach.call(nd.querySelectorAll('circle'),function(c,i){d(c,i*90);});}
+    var hub=svg.querySelector('circle[fill="var(--accent-surface)"]');
+    if(hub){
+      hub.setAttribute('class','hubc');
+      var pu=hub.cloneNode(false);
+      pu.setAttribute('class','pulse');pu.setAttribute('fill','none');
+      hub.parentNode.insertBefore(pu,hub);
+    }
+    Q('.node',dg).forEach(function(n,i){d(n,250+i*90);});
+  });
+
+  /* ---------- 04 capex ---------- */
+  var bars=D.querySelector('.bars');
+  if(bars){
+    bars.classList.add('grp');
+    C(bars).forEach(function(col,i){
+      d(col,i*150);
+      var v=col.querySelector('.v');
+      if(v){v.classList.add('cnt');cd(v,i*150+250);}
+    });
+  }
+  Q('.s4-cards>div').forEach(function(c,i){
+    c.classList.add('rv','fromr');d(c,200+i*150);
+    var n=c.querySelector('.n');
+    if(n){n.classList.add('cnt');cd(n,200+i*150+200);}
+  });
+
+  /* ---------- 05 stack ---------- */
+  Q('.layer').forEach(function(l,i){l.classList.add('rv','froml');d(l,i*140);});
+  Q('.bracket').forEach(function(b){b.classList.add('rv');d(b,440);});
+
+  /* ---------- counters ---------- */
+  function count(el){
+    var raw=el.getAttribute('data-raw');if(raw===null)return;
+    var m=raw.match(/\d[\d.,]*/);if(!m){return;}
+    var num=m[0],pre=raw.slice(0,m.index),post=raw.slice(m.index+num.length);
+    var comma=num.indexOf(',')>-1,clean=num.replace(/,/g,'');
+    var dec=(clean.split('.')[1]||'').length,target=parseFloat(clean);
+    if(isNaN(target)){return;}
+    var t0=null,dur=1050;
+    function fmt(v){
+      var s=v.toFixed(dec);
+      if(comma){var p=s.split('.');p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');s=p.join('.');}
+      return s;
+    }
+    function step(ts){
+      if(t0===null)t0=ts;
+      var p=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-p,3);
+      el.textContent=pre+fmt(target*e)+post;
+      if(p<1)W.requestAnimationFrame(step);else el.textContent=raw;
+    }
+    W.requestAnimationFrame(step);
+  }
+  Q('.cnt').forEach(function(el){el.setAttribute('data-raw',el.textContent.trim());});
+  function fire(root){
+    var list=Q('.cnt',root);
+    if(root.classList&&root.classList.contains('cnt'))list.push(root);
+    list.forEach(function(el){
+      if(el.getAttribute('data-done'))return;
+      el.setAttribute('data-done','1');
+      W.setTimeout(function(){count(el);},parseInt(el.getAttribute('data-cd')||'200',10));
+    });
+  }
+
+  /* ---------- observer ---------- */
+  var targets=Q('.rv,.grp');
+  function show(el){
+    el.classList.add('in');
+    fire(el);
+    if(el.classList.contains('s3-diag')||el.classList.contains('s3-diag-m')){
+      W.setTimeout(function(){el.classList.add('drawn');},1400);
+    }
+  }
+  if(RM||!('IntersectionObserver' in W)){
+    targets.forEach(show);
+  }else{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});
+    },{threshold:0,rootMargin:'0px 0px -40px 0px'});
+    targets.forEach(function(t){io.observe(t);});
+    /* fallback sweep: iOS WebKit drops observer callbacks while compositing */
+    var pend=targets.slice(),queued=false;
+    function sweep(){
+      queued=false;
+      var vh=W.innerHeight||D.documentElement.clientHeight,left=[];
+      for(var i=0;i<pend.length;i++){
+        var el=pend[i];
+        if(el.classList.contains('in'))continue;
+        if(el.getBoundingClientRect().top<vh-40){show(el);io.unobserve(el);}
+        else left.push(el);
+      }
+      pend=left;
+    }
+    function qsweep(){if(!queued&&pend.length){queued=true;W.requestAnimationFrame(sweep);}}
+    W.addEventListener('scroll',qsweep,{passive:true});
+    W.addEventListener('resize',qsweep,{passive:true});
+    W.addEventListener('load',qsweep);
+    W.addEventListener('orientationchange',qsweep);
+    qsweep();W.setTimeout(qsweep,500);W.setTimeout(qsweep,1500);
+  }
+})();
+</script>
 
 </body>
 </html>
